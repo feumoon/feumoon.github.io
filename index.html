@@ -8,8 +8,7 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>About — Fe:u Moon</title>
-
+<title>Fe:u Moon — Artist</title>
 
 <style>
 
@@ -102,185 +101,200 @@ nav a:hover {
 
 
 /* =====================
-   MAIN
+   HOME
 ===================== */
 
 main {
 
-    padding: 150px 3.5% 150px;
+    padding: 110px 3.5% 0;
 
 }
 
 
-.page-title {
+/* =====================
+   WORKS
+===================== */
+
+#works {
+
+    padding: 60px 0 180px;
+
+}
+
+
+.section-title {
 
     font-size: 11px;
 
     letter-spacing: 2px;
 
-    margin-bottom: 90px;
+    margin-bottom: 70px;
 
 }
 
 
-/* =====================
-   ABOUT LAYOUT
-===================== */
+/* 작품 그리드 */
 
-.about-layout {
+.works-grid {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
 
-    gap: 10vw;
+    gap: 70px 28px;
 
-}
-
-
-/* =====================
-   INTRO
-===================== */
-
-.about-intro {
-
-    max-width: 680px;
+    align-items: start;
 
 }
 
 
-.about-intro h1 {
+/* 작품 */
 
-    margin: 0;
+.work {
 
-    font-size: clamp(30px, 4vw, 58px);
+    color: #111111;
 
-    line-height: 1.18;
+    text-decoration: none;
 
-    font-weight: 400;
-
-    letter-spacing: -2px;
+    display: block;
 
 }
 
 
-.about-intro p {
+/* 이미지 */
 
-    margin: 50px 0 0;
+.work-image {
 
-    max-width: 570px;
+    width: 100%;
 
-    font-size: 14px;
+    aspect-ratio: 4 / 5;
 
-    line-height: 1.9;
-
-    color: #555555;
-
-}
-
-
-/* =====================
-   BIOGRAPHY
-===================== */
-
-.about-details {
-
-    max-width: 600px;
-
-}
-
-
-.about-group {
-
-    margin-bottom: 75px;
-
-}
-
-
-.about-group h2 {
-
-    margin: 0 0 28px;
-
-    font-size: 10px;
-
-    font-weight: 400;
-
-    letter-spacing: 1.8px;
-
-    text-transform: uppercase;
-
-}
-
-
-.about-entry {
-
-    padding: 17px 0;
-
-    border-top: 1px solid #dddddd;
+    background: #f1f1ef;
 
     display: flex;
 
-    flex-direction: column;
+    justify-content: center;
 
-    gap: 4px;
+    align-items: center;
+
+    overflow: hidden;
+
+}
+
+
+.work-image span {
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #aaaaaa;
+
+}
+
+
+.work:hover .work-image {
+
+    opacity: 0.82;
+
+}
+
+
+/* 큰 작품 */
+
+.work-large {
+
+    grid-column: span 2;
+
+}
+
+
+.work-large .work-image {
+
+    aspect-ratio: 16 / 10;
+
+}
+
+
+/* 작품 정보 */
+
+.work-info {
+
+    padding-top: 14px;
+
+}
+
+
+.work-title {
 
     font-size: 13px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.work-meta {
+
+    font-size: 10px;
+
+    color: #777777;
 
     line-height: 1.5;
 
 }
 
 
-.about-entry:last-child {
-
-    border-bottom: 1px solid #dddddd;
-
-}
-
-
-.about-entry strong {
-
-    font-weight: 400;
-
-}
-
-
-.about-entry span {
-
-    color: #777777;
-
-}
-
-
-.about-entry em {
-
-    font-style: italic;
-
-}
-
-
 /* =====================
-   CV LINK
+   CONTACT
 ===================== */
 
-.cv-link {
+#contact {
+
+    padding: 180px 0 220px;
+
+    border-top: 1px solid #dddddd;
+
+}
+
+
+.contact-title {
+
+    font-size: clamp(45px, 7vw, 100px);
+
+    line-height: 1.05;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 60px;
+
+}
+
+
+.contact-info {
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #555555;
+
+}
+
+
+.contact-link {
+
+    display: inline-block;
+
+    margin-top: 35px;
 
     color: #111111;
 
     text-decoration: none;
 
-    font-size: 11px;
-
-    letter-spacing: 1.2px;
+    font-size: 14px;
 
     border-bottom: 1px solid #111111;
-
-}
-
-
-.cv-link:hover {
-
-    opacity: 0.5;
 
 }
 
@@ -291,11 +305,9 @@ main {
 
 footer {
 
-    margin: 0 3.5%;
+    border-top: 1px solid #dddddd;
 
     padding: 30px 0 45px;
-
-    border-top: 1px solid #dddddd;
 
     display: flex;
 
@@ -346,27 +358,52 @@ footer {
     }
 
 
-    .about-layout {
+    .works-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 45px 15px;
+
+    }
+
+
+    .work-large {
+
+        grid-column: span 2;
+
+    }
+
+
+    #contact {
+
+        padding-top: 120px;
+
+        padding-bottom: 150px;
+
+    }
+
+
+    .contact-title {
+
+        letter-spacing: -2px;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .works-grid {
 
         grid-template-columns: 1fr;
 
-        gap: 100px;
-
     }
 
 
-    .about-intro h1 {
+    .work-large {
 
-        letter-spacing: -1px;
-
-    }
-
-
-    footer {
-
-        margin-left: 5%;
-
-        margin-right: 5%;
+        grid-column: span 1;
 
     }
 
@@ -387,13 +424,9 @@ footer {
 
 <header>
 
-    <a href="index.html"
-       class="logo"
-       style="text-decoration:none; color:#111111;">
-
+    <div class="logo">
         Fe:u Moon
-
-    </a>
+    </div>
 
 
     <nav>
@@ -431,279 +464,235 @@ footer {
 <main>
 
 
-    <div class="page-title">
-        ABOUT
-    </div>
+    <!-- WORKS -->
 
+    <section id="works">
 
-
-    <div class="about-layout">
-
-
-        <!-- =====================
-             ARTIST STATEMENT
-        ===================== -->
-
-        <div class="about-intro">
-
-
-            <h1>
-
-                Fe:u Moon is a Korean
-                visual artist working across
-                painting, drawing, installation,
-                performance, moving image,
-                and interactive media.
-
-            </h1>
-
-
-            <p>
-
-                Her practice begins with an
-                attention to human presence —
-                the traces we leave behind,
-                what disappears, and what
-                remains between the visible
-                and the unseen.
-
-            </p>
-
-
-            <p>
-
-                Moving between physical
-                materials, images, sound,
-                and interactive systems,
-                Moon explores how individuals
-                experience relationships,
-                environments, and the
-                structures that surround them.
-
-            </p>
-
-
-            <p>
-
-                Rather than working within
-                a fixed medium or a predetermined
-                subject, she allows each work
-                to develop from a question,
-                sensation, or encounter.
-
-            </p>
-
-
-            <p>
-
-                Her practice moves between
-                the personal and the social,
-                between physical experience
-                and mediated environments.
-                Through this movement, she
-                considers what we notice,
-                what we lose sight of,
-                and what may still remain
-                with us.
-
-            </p>
-
+        <div class="section-title">
+            WORKS
         </div>
 
 
-
-        <!-- =====================
-             SELECTED BIO
-        ===================== -->
-
-        <div class="about-details">
+        <div class="works-grid">
 
 
-            <!-- EDUCATION -->
+            <!-- WORK 01 -->
 
-            <div class="about-group">
+            <a href="#" class="work work-large">
 
-                <h2>
-                    Education
-                </h2>
-
-
-                <div class="about-entry">
-
-                    <strong>
-                        Paris MJM Graphic Design
-                    </strong>
+                <div class="work-image">
 
                     <span>
-                        CSFP, Highest Honors
-                    </span>
-
-                    <span>
-                        Paris, France
+                        IMAGE
                     </span>
 
                 </div>
 
 
-                <div class="about-entry">
+                <div class="work-info">
 
-                    <strong>
-                        Bordeaux Ecole des Beaux-Arts
-                    </strong>
+                    <div class="work-title">
+                        Work Title
+                    </div>
 
-                    <span>
-                        B.A. — Installation & Performance
-                    </span>
-
-                    <span>
-                        Bordeaux, France
-                    </span>
+                    <div class="work-meta">
+                        2026 · Installation / Video
+                    </div>
 
                 </div>
 
-            </div>
+            </a>
 
 
 
-            <!-- AWARDS -->
+            <!-- WORK 02 -->
 
-            <div class="about-group">
+            <a href="#" class="work">
 
-                <h2>
-                    Awards
-                </h2>
-
-
-                <div class="about-entry">
-
-                    <strong>
-                        2022
-                    </strong>
+                <div class="work-image">
 
                     <span>
-                        Young Artist Award
-                    </span>
-
-                    <span>
-                        Christian Art Association
+                        IMAGE
                     </span>
 
                 </div>
 
 
-                <div class="about-entry">
+                <div class="work-info">
 
-                    <strong>
-                        2020
-                    </strong>
+                    <div class="work-title">
+                        Work Title
+                    </div>
 
-                    <span>
-                        Honorary Award
-                    </span>
-
-                    <span>
-                        Australian VFX Film Festival —
-                        <em>The Last Breath</em>
-                    </span>
+                    <div class="work-meta">
+                        2024 · Painting
+                    </div>
 
                 </div>
 
-            </div>
+            </a>
 
 
 
-            <!-- SELECTED EXHIBITIONS -->
+            <!-- WORK 03 -->
 
-            <div class="about-group">
+            <a href="#" class="work">
 
-                <h2>
-                    Selected Exhibitions
-                </h2>
-
-
-                <div class="about-entry">
-
-                    <strong>
-                        2024
-                    </strong>
+                <div class="work-image">
 
                     <span>
-                        <em>
-                            MoonLight in the Beginning
-                        </em>
-                        — 첫날, 밤의 윤슬
-                    </span>
-
-                    <span>
-                        Gallery Nava, Gwangmyeong, South Korea
+                        IMAGE
                     </span>
 
                 </div>
 
 
-                <div class="about-entry">
+                <div class="work-info">
 
-                    <strong>
-                        2016
-                    </strong>
+                    <div class="work-title">
+                        Work Title
+                    </div>
+
+                    <div class="work-meta">
+                        2022 · Installation
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- WORK 04 -->
+
+            <a href="#" class="work">
+
+                <div class="work-image">
 
                     <span>
-                        <em>
-                            Poser
-                        </em>
-                    </span>
-
-                    <span>
-                        Galerie La Reserve,
-                        Bordeaux, France
+                        IMAGE
                     </span>
 
                 </div>
 
-            </div>
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Work Title
+                    </div>
+
+                    <div class="work-meta">
+                        2022 · Video
+                    </div>
+
+                </div>
+
+            </a>
 
 
 
-            <!-- CURRENT PRACTICE -->
+            <!-- WORK 05 -->
 
-            <div class="about-group">
+            <a href="#" class="work">
 
-                <h2>
-                    Current Practice
-                </h2>
-
-
-                <div class="about-entry">
-
-                    <strong>
-                        Interactive Media & Performance
-                    </strong>
+                <div class="work-image">
 
                     <span>
-                        OSC-based interaction
-                    </span>
-
-                    <span>
-                        Real-time media systems
+                        IMAGE
                     </span>
 
                 </div>
 
-            </div>
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Work Title
+                    </div>
+
+                    <div class="work-meta">
+                        2021 · Drawing
+                    </div>
+
+                </div>
+
+            </a>
 
 
 
-            <a href="cv.html"
-               class="cv-link">
+            <!-- WORK 06 -->
 
-                VIEW FULL CV →
+            <a href="#" class="work work-large">
+
+                <div class="work-image">
+
+                    <span>
+                        IMAGE
+                    </span>
+
+                </div>
+
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Work Title
+                    </div>
+
+                    <div class="work-meta">
+                        2020 · Painting
+                    </div>
+
+                </div>
 
             </a>
 
 
         </div>
 
-    </div>
+    </section>
+
+
+
+    <!-- =====================
+         CONTACT
+    ===================== -->
+
+    <section id="contact">
+
+        <div class="section-title">
+            CONTACT
+        </div>
+
+
+        <div class="contact-title">
+
+            Exhibitions,<br>
+            collaborations<br>
+            & artwork inquiries
+
+        </div>
+
+
+        <div class="contact-info">
+
+            For exhibitions, collaborations,
+            commissions and artwork inquiries.
+
+        </div>
+
+
+        <a
+            href="mailto:YOUR-EMAIL@example.com"
+            class="contact-link">
+
+            Contact
+
+        </a>
+
+    </section>
+
 
 </main>
 
