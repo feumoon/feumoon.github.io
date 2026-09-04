@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>About — Fe:u Moon</title>
+
+
+<style>
+
+/* =====================
+   BASIC
+===================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #ffffff;
+    color: #111111;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =====================
+   HEADER
+===================== */
+
+header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 100;
+
+    padding: 25px 3.5%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: rgba(255,255,255,0.94);
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+.logo {
+
+    font-size: 20px;
+
+    letter-spacing: 0.3px;
+
+}
+
+
+.logo a {
+
+    color: #111111;
+
+    text-decoration: none;
+
+}
+
+
+nav {
+
+    display: flex;
+
+    gap: 30px;
+
+}
+
+
+nav a {
+
+    color: #111111;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+nav a:hover {
+
+    opacity: 0.4;
+
+}
+
+
+/* =====================
+   MAIN
+===================== */
+
+main {
+
+    padding: 150px 3.5% 150px;
+
+}
+
+
+.page-title {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 90px;
+
+}
+
+
+/* =====================
+   ABOUT
+===================== */
+
+.about-layout {
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.9fr;
+
+    gap: 10vw;
+
+    align-items: start;
+
+}
+
+
+/* =====================
+   ARTIST STATEMENT
+===================== */
+
+.about-intro {
+
+    max-width: 700px;
+
+}
+
+
+.about-intro h1 {
+
+    margin: 0;
+
+    font-size: clamp(32px, 4vw, 58px);
+
+    line-height: 1.18;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+
+}
+
+
+.about-intro p {
+
+    margin: 50px 0 0;
+
+    max-width: 620px;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: #555555;
+
+}
+
+
+/* =====================
+   DETAILS
+===================== */
+
+.about-details {
+
+    max-width: 600px;
+
+}
+
+
+.about-group {
+
+    margin-bottom: 75px;
+
+}
+
+
+.about-group h2 {
+
+    margin: 0 0 28px;
+
+    font-size: 10px;
+
+    font-weight: 400;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+
+}
+
+
+.about-entry {
+
+    padding: 17px 0;
+
+    border-top: 1px solid #dddddd;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+.about-entry:last-child {
+
+    border-bottom: 1px solid #dddddd;
+
+}
+
+
+.about-entry strong {
+
+    font-weight: 400;
+
+}
+
+
+.about-entry span {
+
+    color: #777777;
+
+}
+
+
+.about-entry em {
+
+    font-style: italic;
+
+}
+
+
+/* =====================
+   CV LINK
+===================== */
+
+.cv-link {
+
+    color: #111111;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    border-bottom: 1px solid #111111;
+
+}
+
+
+.cv-link:hover {
+
+    opacity: 0.5;
+
+}
+
+
+/* =====================
+   FOOTER
+===================== */
+
+footer {
+
+    margin: 0 3.5%;
+
+    padding: 30px 0 45px;
+
+    border-top: 1px solid #dddddd;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 10px;
+
+    color: #777777;
+
+}
+
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 800px) {
+
+    header {
+
+        padding: 20px 5%;
+
+    }
+
+
+    nav {
+
+        gap: 12px;
+
+        overflow-x: auto;
+
+    }
+
+
+    nav a {
+
+        font-size: 8px;
+
+    }
+
+
+    main {
+
+        padding-left: 5%;
+
+        padding-right: 5%;
+
+    }
+
+
+    .about-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 100px;
+
+    }
+
+
+    .about-intro h1 {
+
+        letter-spacing: -1px;
+
+    }
+
+
+    footer {
+
+        margin-left: 5%;
+
+        margin-right: 5%;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<!-- =====================
+     HEADER
+===================== -->
+
+<header>
+
+
+    <div class="logo">
+
+        <a href="index.html">
+            Fe:u Moon
+        </a>
+
+    </div>
+
+
+
+    <nav>
+
+        <a href="index.html">
+            WORKS
+        </a>
+
+        <a href="exhibitions.html">
+            EXHIBITIONS
+        </a>
+
+        <a href="performance.html">
+            PERFORMANCE
+        </a>
+
+        <a href="about.html">
+            ABOUT
+        </a>
+
+        <a href="cv.html">
+            CV
+        </a>
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- =====================
+     MAIN
+===================== -->
+
+<main>
+
+
+    <div class="page-title">
+        ABOUT
+    </div>
+
+
+
+    <div class="about-layout">
+
+
+        <!-- =====================
+             LEFT
+             ARTIST STATEMENT
+        ===================== -->
+
+        <div class="about-intro">
+
+
+            <h1>
+
+                Fe:u Moon is a Korean
+                visual artist working across
+                painting, drawing, installation,
+                performance, moving image,
+                and interactive media.
+
+            </h1>
+
+
+
+            <p>
+
+                Her practice begins with an
+                attention to human presence —
+                the traces we leave behind,
+                what disappears, and what
+                remains between the visible
+                and the unseen.
+
+            </p>
+
+
+
+            <p>
+
+                Moving between physical
+                materials, images, sound,
+                and interactive systems,
+                Moon explores how individuals
+                experience relationships,
+                environments, and the
+                structures that surround them.
+
+            </p>
+
+
+
+            <p>
+
+                Rather than working within
+                a fixed medium or a predetermined
+                subject, she allows each work
+                to develop from a question,
+                sensation, or encounter.
+
+            </p>
+
+
+
+            <p>
+
+                Her practice moves between
+                the personal and the social,
+                between physical experience
+                and mediated environments.
+                Through this movement, she
+                considers what we notice,
+                what we lose sight of,
+                and what may still remain
+                with us.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =====================
+             RIGHT
+             SELECTED BIOGRAPHY
+        ===================== -->
+
+        <div class="about-details">
+
+
+            <!-- EDUCATION -->
+
+            <div class="about-group">
+
+                <h2>
+                    Education
+                </h2>
+
+
+                <div class="about-entry">
+
+                    <strong>
+                        Paris MJM Graphic Design
+                    </strong>
+
+                    <span>
+                        CSFP, Highest Honors
+                    </span>
+
+                    <span>
+                        Paris, France
+                    </span>
+
+                </div>
+
+
+                <div class="about-entry">
+
+                    <strong>
+                        Bordeaux Ecole des Beaux-Arts
+                    </strong>
+
+                    <span>
+                        B.A. — Installation & Performance
+                    </span>
+
+                    <span>
+                        Bordeaux, France
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- AWARDS -->
+
+            <div class="about-group">
+
+                <h2>
+                    Awards
+                </h2>
+
+
+                <div class="about-entry">
+
+                    <strong>
+                        2022
+                    </strong>
+
+                    <span>
+                        Young Artist Award
+                    </span>
+
+                    <span>
+                        Christian Art Association
+                    </span>
+
+                </div>
+
+
+                <div class="about-entry">
+
+                    <strong>
+                        2020
+                    </strong>
+
+                    <span>
+                        Honorary Award
+                    </span>
+
+                    <span>
+                        Australian VFX Film Festival —
+                        <em>The Last Breath</em>
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SELECTED SOLO EXHIBITIONS -->
+
+            <div class="about-group">
+
+                <h2>
+                    Selected Solo Exhibitions
+                </h2>
+
+
+                <div class="about-entry">
+
+                    <strong>
+                        2024
+                    </strong>
+
+                    <span>
+                        <em>
+                            MoonLight in the Beginning
+                        </em>
+                        — 첫날, 밤의 윤슬
+                    </span>
+
+                    <span>
+                        Gallery Nava, Gwangmyeong, South Korea
+                    </span>
+
+                </div>
+
+
+                <div class="about-entry">
+
+                    <strong>
+                        2016
+                    </strong>
+
+                    <span>
+                        <em>
+                            Poser
+                        </em>
+                    </span>
+
+                    <span>
+                        Galerie La Reserve,
+                        Bordeaux, France
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CURRENT PRACTICE -->
+
+            <div class="about-group">
+
+                <h2>
+                    Current Practice
+                </h2>
+
+
+                <div class="about-entry">
+
+                    <strong>
+                        Interactive Media & Performance
+                    </strong>
+
+                    <span>
+                        OSC-based interaction
+                    </span>
+
+                    <span>
+                        Real-time media
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FULL CV -->
+
+            <a href="cv.html"
+               class="cv-link">
+
+                VIEW FULL CV →
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =====================
+     FOOTER
+===================== -->
+
+<footer>
+
+    <div>
+        © 2026 Fe:u Moon. All rights reserved.
+    </div>
+
+
+    <div>
+        Fe:u Moon
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
