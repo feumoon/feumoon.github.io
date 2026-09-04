@@ -358,25 +358,48 @@ section {
 /* --------------------
    ABOUT
 -------------------- */
+/* --------------------
+   ABOUT
+-------------------- */
 
-.about-main {
+.about-layout {
 
-    max-width: 900px;
+    display: grid;
 
-    font-size: clamp(28px, 4vw, 55px);
+    grid-template-columns: 1fr 1fr;
 
-    line-height: 1.25;
-
-    letter-spacing: -1px;
+    gap: 10vw;
 
 }
 
 
-.about-secondary {
+.about-intro {
 
     max-width: 650px;
 
-    margin-top: 60px;
+}
+
+
+.about-intro h2 {
+
+    margin: 0;
+
+    font-size: clamp(30px, 4vw, 55px);
+
+    line-height: 1.2;
+
+    font-weight: 400;
+
+    letter-spacing: -1.5px;
+
+}
+
+
+.about-intro p {
+
+    margin-top: 50px;
+
+    max-width: 520px;
 
     font-size: 14px;
 
@@ -387,6 +410,97 @@ section {
 }
 
 
+.about-details {
+
+    max-width: 600px;
+
+}
+
+
+.about-group {
+
+    margin-bottom: 70px;
+
+}
+
+
+.about-group h3 {
+
+    margin: 0 0 25px;
+
+    font-size: 10px;
+
+    font-weight: 400;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+
+}
+
+
+.about-entry {
+
+    padding: 17px 0;
+
+    border-top: 1px solid #ddd;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+.about-entry:last-child {
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+
+.about-entry strong {
+
+    font-weight: 400;
+
+}
+
+
+.about-entry span {
+
+    color: #777;
+
+}
+
+
+.about-entry em {
+
+    font-style: italic;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .about-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 80px;
+
+    }
+
+}
+
+
+
+   
 /* --------------------
    CV
 -------------------- */
@@ -908,6 +1022,10 @@ footer {
      ABOUT
 ===================== -->
 
+<!-- =====================
+     ABOUT
+===================== -->
+
 <section id="about">
 
     <div class="section-label">
@@ -915,32 +1033,244 @@ footer {
     </div>
 
 
-    <div class="about-main">
-
-        Fe:u Moon works across painting,
-        drawing, performance, sculpture
-        and media.
-
-    </div>
+    <div class="about-layout">
 
 
-    <div class="about-secondary">
+        <!-- LEFT : INTRO -->
 
-        Her practice develops through
-        interconnected works and series,
-        allowing questions and sensations
-        to move between different materials,
-        bodies, images and spaces.
+        <div class="about-intro">
 
-        <br><br>
+            <h2>
+                Fe:u Moon is a Korean
+                visual artist working across
+                painting, drawing, performance,
+                installation and media.
+            </h2>
 
-        Artist statement will be developed
-        here.
+
+            <p>
+                Her practice moves between
+                different materials and forms,
+                exploring traces of human presence,
+                relationships, systems and the
+                spaces we inhabit.
+            </p>
+
+
+            <p>
+                Rather than remaining within a
+                single medium, she develops
+                interconnected works through
+                painting, installation, performance,
+                moving image and interactive media.
+            </p>
+
+        </div>
+
+
+
+        <!-- RIGHT : BIOGRAPHY -->
+
+        <div class="about-details">
+
+
+            <div class="about-group">
+
+                <h3>
+                    Education
+                </h3>
+
+                <div class="about-entry">
+
+                    <strong>
+                        Paris MJM Graphic Design
+                    </strong>
+
+                    <span>
+                        CSFP, Highest Honors
+                    </span>
+
+                    <span>
+                        Paris, France
+                    </span>
+
+                </div>
+
+
+                <div class="about-entry">
+
+                    <strong>
+                        Bordeaux Ecole des Beaux-Arts
+                    </strong>
+
+                    <span>
+                        B.A. — Installation & Performance
+                    </span>
+
+                    <span>
+                        Bordeaux, France
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="about-group">
+
+                <h3>
+                    Awards
+                </h3>
+
+                <div class="about-entry">
+
+                    <strong>
+                        2022
+                    </strong>
+
+                    <span>
+                        Young Artist Award,
+                        Christian Art Association
+                    </span>
+
+                </div>
+
+
+                <div class="about-entry">
+
+                    <strong>
+                        2020
+                    </strong>
+
+                    <span>
+                        Honorary Award,
+                        Australian VFX Film Festival
+                    </span>
+
+                    <span>
+                        <em>The Last Breath</em>
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="about-group">
+
+                <h3>
+                    Selected Solo Exhibitions
+                </h3>
+
+                <div class="about-entry">
+
+                    <strong>
+                        2024
+                    </strong>
+
+                    <span>
+                        <em>MoonLight in the Beginning</em>
+                        — 첫날, 밤의 윤슬
+                    </span>
+
+                    <span>
+                        Gallery Nava, Gwangmyeong, South Korea
+                    </span>
+
+                </div>
+
+
+                <div class="about-entry">
+
+                    <strong>
+                        2016
+                    </strong>
+
+                    <span>
+                        <em>Poser</em>
+                    </span>
+
+                    <span>
+                        Galerie La Reserve,
+                        Bordeaux, France
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="about-group">
+
+                <h3>
+                    Selected Activities
+                </h3>
+
+                <div class="about-entry">
+
+                    <strong>
+                        2026
+                    </strong>
+
+                    <span>
+                        Interactive media /
+                        performance
+                    </span>
+
+                    <span>
+                        OSC-based interaction
+                        and real-time media
+                    </span>
+
+                </div>
+
+
+                <div class="about-entry">
+
+                    <strong>
+                        2022–2023
+                    </strong>
+
+                    <span>
+                        Stone Production
+                    </span>
+
+                    <span>
+                        VFX Designer /
+                        Video Graphic Designer
+                    </span>
+
+                </div>
+
+
+                <div class="about-entry">
+
+                    <strong>
+                        2023
+                    </strong>
+
+                    <span>
+                        Red Breath
+                    </span>
+
+                    <span>
+                        Video production group
+                        organizer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
 
     </div>
 
 </section>
-
 
 
 <!-- =====================
