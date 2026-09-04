@@ -12,6 +12,10 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
+/* =====================
+   BASIC
+===================== */
+
 * {
     box-sizing: border-box;
 }
@@ -22,8 +26,8 @@ html {
 
 body {
     margin: 0;
-    background: #fff;
-    color: #111;
+    background: #ffffff;
+    color: #111111;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -33,38 +37,77 @@ body {
 ===================== */
 
 header {
+
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
-    padding: 25px 3.5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255,255,255,0.94);
-    backdrop-filter: blur(10px);
+
     z-index: 100;
+
+    padding: 25px 3.5%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: rgba(255,255,255,0.94);
+
+    backdrop-filter: blur(10px);
+
 }
+
 
 .logo {
+
     font-size: 20px;
+
     letter-spacing: 0.3px;
+
 }
+
 
 nav {
+
     display: flex;
+
     gap: 30px;
+
 }
+
 
 nav a {
-    color: #111;
+
+    color: #111111;
+
     text-decoration: none;
+
     font-size: 10px;
+
     letter-spacing: 1.5px;
+
 }
 
+
 nav a:hover {
-    opacity: 0.45;
+
+    opacity: 0.4;
+
+}
+
+
+/* =====================
+   HOME
+===================== */
+
+main {
+
+    padding: 110px 3.5% 0;
+
 }
 
 
@@ -72,14 +115,21 @@ nav a:hover {
    WORKS
 ===================== */
 
-main {
-    padding: 130px 3.5% 100px;
+#works {
+
+    padding: 60px 0 180px;
+
 }
 
-.page-title {
+
+.section-title {
+
     font-size: 11px;
+
     letter-spacing: 2px;
+
     margin-bottom: 70px;
+
 }
 
 
@@ -89,25 +139,29 @@ main {
 
     display: grid;
 
-    grid-template-columns:
-        2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
 
-    gap: 55px 28px;
+    gap: 70px 28px;
 
     align-items: start;
+
 }
 
 
 /* 작품 */
 
 .work {
+
+    color: #111111;
+
     text-decoration: none;
-    color: #111;
+
     display: block;
+
 }
 
 
-/* 이미지 자리 */
+/* 이미지 */
 
 .work-image {
 
@@ -119,9 +173,9 @@ main {
 
     display: flex;
 
-    align-items: center;
-
     justify-content: center;
+
+    align-items: center;
 
     overflow: hidden;
 
@@ -134,7 +188,7 @@ main {
 
     letter-spacing: 2px;
 
-    color: #aaa;
+    color: #aaaaaa;
 
 }
 
@@ -142,6 +196,22 @@ main {
 .work:hover .work-image {
 
     opacity: 0.82;
+
+}
+
+
+/* 큰 작품 */
+
+.work-large {
+
+    grid-column: span 2;
+
+}
+
+
+.work-large .work-image {
+
+    aspect-ratio: 16 / 10;
 
 }
 
@@ -168,25 +238,63 @@ main {
 
     font-size: 10px;
 
-    color: #777;
+    color: #777777;
 
     line-height: 1.5;
 
 }
 
 
-/* 큰 작품 */
+/* =====================
+   CONTACT
+===================== */
 
-.work-large {
+#contact {
 
-    grid-column: span 2;
+    padding: 180px 0 220px;
+
+    border-top: 1px solid #dddddd;
 
 }
 
 
-.work-large .work-image {
+.contact-title {
 
-    aspect-ratio: 16 / 10;
+    font-size: clamp(45px, 7vw, 100px);
+
+    line-height: 1.05;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 60px;
+
+}
+
+
+.contact-info {
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #555555;
+
+}
+
+
+.contact-link {
+
+    display: inline-block;
+
+    margin-top: 35px;
+
+    color: #111111;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #111111;
 
 }
 
@@ -197,11 +305,9 @@ main {
 
 footer {
 
-    margin: 0 3.5%;
+    border-top: 1px solid #dddddd;
 
     padding: 30px 0 45px;
-
-    border-top: 1px solid #ddd;
 
     display: flex;
 
@@ -209,7 +315,7 @@ footer {
 
     font-size: 10px;
 
-    color: #777;
+    color: #777777;
 
 }
 
@@ -226,17 +332,22 @@ footer {
 
     }
 
+
     nav {
 
         gap: 12px;
 
+        overflow-x: auto;
+
     }
+
 
     nav a {
 
         font-size: 8px;
 
     }
+
 
     main {
 
@@ -246,17 +357,35 @@ footer {
 
     }
 
+
     .works-grid {
 
         grid-template-columns: 1fr 1fr;
 
-        gap: 40px 15px;
+        gap: 45px 15px;
 
     }
+
 
     .work-large {
 
         grid-column: span 2;
+
+    }
+
+
+    #contact {
+
+        padding-top: 120px;
+
+        padding-bottom: 150px;
+
+    }
+
+
+    .contact-title {
+
+        letter-spacing: -2px;
 
     }
 
@@ -271,6 +400,7 @@ footer {
 
     }
 
+
     .work-large {
 
         grid-column: span 1;
@@ -282,6 +412,7 @@ footer {
 </style>
 
 </head>
+
 
 
 <body>
@@ -327,200 +458,241 @@ footer {
 
 
 <!-- =====================
-     WORKS
+     MAIN
 ===================== -->
 
 <main>
 
-    <div class="page-title">
-        WORKS
-    </div>
+
+    <!-- WORKS -->
+
+    <section id="works">
+
+        <div class="section-title">
+            WORKS
+        </div>
 
 
-    <div class="works-grid">
+        <div class="works-grid">
 
 
-        <!-- WORK 01 -->
+            <!-- WORK 01 -->
 
-        <a class="work work-large"
-           href="#">
+            <a href="#" class="work work-large">
 
-            <div class="work-image">
+                <div class="work-image">
 
-                <span>
-                    IMAGE
-                </span>
+                    <span>
+                        IMAGE
+                    </span>
 
-            </div>
-
-
-            <div class="work-info">
-
-                <div class="work-title">
-                    Work Title
                 </div>
 
-                <div class="work-meta">
-                    2026 · Installation / Video
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Work Title
+                    </div>
+
+                    <div class="work-meta">
+                        2026 · Installation / Video
+                    </div>
+
                 </div>
 
-            </div>
+            </a>
+
+
+
+            <!-- WORK 02 -->
+
+            <a href="#" class="work">
+
+                <div class="work-image">
+
+                    <span>
+                        IMAGE
+                    </span>
+
+                </div>
+
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Work Title
+                    </div>
+
+                    <div class="work-meta">
+                        2024 · Painting
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- WORK 03 -->
+
+            <a href="#" class="work">
+
+                <div class="work-image">
+
+                    <span>
+                        IMAGE
+                    </span>
+
+                </div>
+
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Work Title
+                    </div>
+
+                    <div class="work-meta">
+                        2022 · Installation
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- WORK 04 -->
+
+            <a href="#" class="work">
+
+                <div class="work-image">
+
+                    <span>
+                        IMAGE
+                    </span>
+
+                </div>
+
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Work Title
+                    </div>
+
+                    <div class="work-meta">
+                        2022 · Video
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- WORK 05 -->
+
+            <a href="#" class="work">
+
+                <div class="work-image">
+
+                    <span>
+                        IMAGE
+                    </span>
+
+                </div>
+
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Work Title
+                    </div>
+
+                    <div class="work-meta">
+                        2021 · Drawing
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- WORK 06 -->
+
+            <a href="#" class="work work-large">
+
+                <div class="work-image">
+
+                    <span>
+                        IMAGE
+                    </span>
+
+                </div>
+
+
+                <div class="work-info">
+
+                    <div class="work-title">
+                        Work Title
+                    </div>
+
+                    <div class="work-meta">
+                        2020 · Painting
+                    </div>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================
+         CONTACT
+    ===================== -->
+
+    <section id="contact">
+
+        <div class="section-title">
+            CONTACT
+        </div>
+
+
+        <div class="contact-title">
+
+            Exhibitions,<br>
+            collaborations<br>
+            & artwork inquiries
+
+        </div>
+
+
+        <div class="contact-info">
+
+            For exhibitions, collaborations,
+            commissions and artwork inquiries.
+
+        </div>
+
+
+        <a
+            href="mailto:YOUR-EMAIL@example.com"
+            class="contact-link">
+
+            Contact
 
         </a>
 
+    </section>
 
-
-        <!-- WORK 02 -->
-
-        <a class="work"
-           href="#">
-
-            <div class="work-image">
-
-                <span>
-                    IMAGE
-                </span>
-
-            </div>
-
-
-            <div class="work-info">
-
-                <div class="work-title">
-                    Work Title
-                </div>
-
-                <div class="work-meta">
-                    2024 · Painting
-                </div>
-
-            </div>
-
-        </a>
-
-
-
-        <!-- WORK 03 -->
-
-        <a class="work"
-           href="#">
-
-            <div class="work-image">
-
-                <span>
-                    IMAGE
-                </span>
-
-            </div>
-
-
-            <div class="work-info">
-
-                <div class="work-title">
-                    Work Title
-                </div>
-
-                <div class="work-meta">
-                    2022 · Installation
-                </div>
-
-            </div>
-
-        </a>
-
-
-
-        <!-- WORK 04 -->
-
-        <a class="work"
-           href="#">
-
-            <div class="work-image">
-
-                <span>
-                    IMAGE
-                </span>
-
-            </div>
-
-
-            <div class="work-info">
-
-                <div class="work-title">
-                    Work Title
-                </div>
-
-                <div class="work-meta">
-                    2022 · Video
-                </div>
-
-            </div>
-
-        </a>
-
-
-
-        <!-- WORK 05 -->
-
-        <a class="work"
-           href="#">
-
-            <div class="work-image">
-
-                <span>
-                    IMAGE
-                </span>
-
-            </div>
-
-
-            <div class="work-info">
-
-                <div class="work-title">
-                    Work Title
-                </div>
-
-                <div class="work-meta">
-                    2021 · Drawing
-                </div>
-
-            </div>
-
-        </a>
-
-
-
-        <!-- WORK 06 -->
-
-        <a class="work work-large"
-           href="#">
-
-            <div class="work-image">
-
-                <span>
-                    IMAGE
-                </span>
-
-            </div>
-
-
-            <div class="work-info">
-
-                <div class="work-title">
-                    Work Title
-                </div>
-
-                <div class="work-meta">
-                    2020 · Painting
-                </div>
-
-            </div>
-
-        </a>
-
-
-
-    </div>
 
 </main>
 
@@ -535,6 +707,7 @@ footer {
     <div>
         © 2026 Fe:u Moon. All rights reserved.
     </div>
+
 
     <div>
         Fe:u Moon
