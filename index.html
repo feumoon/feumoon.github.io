@@ -10,15 +10,7 @@ content="width=device-width, initial-scale=1.0">
 
 <title>Fe:u Moon — Artist</title>
 
-<meta name="description"
-content="Fe:u Moon — artist working across painting, drawing, performance, sculpture and media.">
-
-
 <style>
-
-/* --------------------
-   BASIC
--------------------- */
 
 * {
     box-sizing: border-box;
@@ -30,175 +22,92 @@ html {
 
 body {
     margin: 0;
-    background: #ffffff;
-    color: #111111;
+    background: #fff;
+    color: #111;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 400;
 }
 
 
-/* --------------------
+/* =====================
    HEADER
--------------------- */
+===================== */
 
 header {
-
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
-
-    z-index: 100;
-
+    padding: 25px 3.5%;
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
-    padding: 26px 4%;
-
     background: rgba(255,255,255,0.94);
-
     backdrop-filter: blur(10px);
+    z-index: 100;
 }
-
 
 .logo {
-
     font-size: 20px;
-
-    letter-spacing: 0.5px;
-
+    letter-spacing: 0.3px;
 }
-
 
 nav {
-
     display: flex;
-
-    gap: 28px;
-
+    gap: 30px;
 }
-
 
 nav a {
-
     color: #111;
-
     text-decoration: none;
-
     font-size: 10px;
-
     letter-spacing: 1.5px;
-
 }
-
 
 nav a:hover {
-
-    opacity: 0.4;
-
+    opacity: 0.45;
 }
 
 
-/* --------------------
-   HERO
--------------------- */
-
-.hero {
-
-    min-height: 100vh;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    padding: 0 4% 9vh;
-
-}
-
-
-.hero-content {
-
-    max-width: 900px;
-
-}
-
-
-.hero h1 {
-
-    margin: 0 0 28px;
-
-    font-size: clamp(48px, 8vw, 110px);
-
-    font-weight: 400;
-
-    letter-spacing: -5px;
-
-}
-
-
-.hero p {
-
-    margin: 0;
-
-    max-width: 600px;
-
-    font-size: 16px;
-
-    line-height: 1.7;
-
-    color: #555;
-
-}
-
-
-/* --------------------
-   SECTION
--------------------- */
-
-section {
-
-    padding: 17vh 4%;
-
-}
-
-
-.section-label {
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 70px;
-
-}
-
-
-/* --------------------
+/* =====================
    WORKS
--------------------- */
+===================== */
+
+main {
+    padding: 130px 3.5% 100px;
+}
+
+.page-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 70px;
+}
+
+
+/* 작품 그리드 */
 
 .works-grid {
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        2fr 1fr 1fr;
 
-    gap: 9vw 5vw;
+    gap: 55px 28px;
 
+    align-items: start;
 }
 
+
+/* 작품 */
 
 .work {
-
-    cursor: pointer;
-
+    text-decoration: none;
+    color: #111;
+    display: block;
 }
 
+
+/* 이미지 자리 */
 
 .work-image {
 
@@ -210,11 +119,11 @@ section {
 
     display: flex;
 
-    justify-content: center;
-
     align-items: center;
 
-    margin-bottom: 18px;
+    justify-content: center;
+
+    overflow: hidden;
 
 }
 
@@ -230,13 +139,18 @@ section {
 }
 
 
+.work:hover .work-image {
+
+    opacity: 0.82;
+
+}
+
+
+/* 작품 정보 */
+
 .work-info {
 
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 20px;
+    padding-top: 14px;
 
 }
 
@@ -244,6 +158,8 @@ section {
 .work-title {
 
     font-size: 13px;
+
+    margin-bottom: 5px;
 
 }
 
@@ -254,354 +170,38 @@ section {
 
     color: #777;
 
-    text-align: right;
-
     line-height: 1.5;
 
 }
 
 
-.work:hover .work-image {
+/* 큰 작품 */
 
-    opacity: 0.85;
+.work-large {
 
-}
-
-
-/* --------------------
-   EXHIBITIONS
--------------------- */
-
-.exhibition {
-
-    border-top: 1px solid #ddd;
-
-    padding: 28px 0;
-
-    display: grid;
-
-    grid-template-columns: 100px 1fr;
-
-    gap: 30px;
+    grid-column: span 2;
 
 }
 
 
-.exhibition:last-child {
+.work-large .work-image {
 
-    border-bottom: 1px solid #ddd;
-
-}
-
-
-.exhibition-year {
-
-    font-size: 11px;
-
-    color: #777;
+    aspect-ratio: 16 / 10;
 
 }
 
 
-.exhibition-title {
-
-    font-size: 25px;
-
-    margin-bottom: 8px;
-
-}
-
-
-.exhibition-info {
-
-    font-size: 12px;
-
-    color: #777;
-
-    line-height: 1.6;
-
-}
-
-
-/* --------------------
-   PERFORMANCE
--------------------- */
-
-.performance-title {
-
-    max-width: 950px;
-
-    font-size: clamp(35px, 6vw, 80px);
-
-    line-height: 1.05;
-
-    letter-spacing: -2px;
-
-}
-
-
-.performance-description {
-
-    max-width: 650px;
-
-    margin-top: 50px;
-
-    font-size: 14px;
-
-    line-height: 1.9;
-
-    color: #555;
-
-}
-
-
-/* --------------------
-   ABOUT
--------------------- */
-/* --------------------
-   ABOUT
--------------------- */
-
-.about-layout {
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 10vw;
-
-}
-
-
-.about-intro {
-
-    max-width: 650px;
-
-}
-
-
-.about-intro h2 {
-
-    margin: 0;
-
-    font-size: clamp(30px, 4vw, 55px);
-
-    line-height: 1.2;
-
-    font-weight: 400;
-
-    letter-spacing: -1.5px;
-
-}
-
-
-.about-intro p {
-
-    margin-top: 50px;
-
-    max-width: 520px;
-
-    font-size: 14px;
-
-    line-height: 1.9;
-
-    color: #555;
-
-}
-
-
-.about-details {
-
-    max-width: 600px;
-
-}
-
-
-.about-group {
-
-    margin-bottom: 70px;
-
-}
-
-
-.about-group h3 {
-
-    margin: 0 0 25px;
-
-    font-size: 10px;
-
-    font-weight: 400;
-
-    letter-spacing: 1.8px;
-
-    text-transform: uppercase;
-
-}
-
-
-.about-entry {
-
-    padding: 17px 0;
-
-    border-top: 1px solid #ddd;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 4px;
-
-    font-size: 13px;
-
-    line-height: 1.5;
-
-}
-
-
-.about-entry:last-child {
-
-    border-bottom: 1px solid #ddd;
-
-}
-
-
-.about-entry strong {
-
-    font-weight: 400;
-
-}
-
-
-.about-entry span {
-
-    color: #777;
-
-}
-
-
-.about-entry em {
-
-    font-style: italic;
-
-}
-
-
-@media (max-width: 800px) {
-
-    .about-layout {
-
-        grid-template-columns: 1fr;
-
-        gap: 80px;
-
-    }
-
-}
-
-
-
-   
-/* --------------------
-   CV
--------------------- */
-
-.cv-category {
-    margin-bottom: 110px;
-}
-
-.cv-category h3 {
-    margin: 0 0 35px;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
-
-.cv-item {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 35px;
-    padding: 20px 0;
-    border-top: 1px solid #ddd;
-}
-
-.cv-category .cv-item:last-child {
-    border-bottom: 1px solid #ddd;
-}
-
-.cv-date {
-    font-size: 11px;
-    color: #777;
-}
-
-.cv-content {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-size: 13px;
-    line-height: 1.5;
-}
-
-.cv-content strong {
-    font-weight: 400;
-}
-
-.cv-content span {
-    color: #777;
-}
-
-.cv-content em {
-    font-style: italic;
-}
-
-
-@media (max-width: 700px) {
-
-    .cv-category {
-        margin-bottom: 80px;
-    }
-
-    .cv-item {
-        grid-template-columns: 75px 1fr;
-        gap: 20px;
-    }
-
-}
-
-   
-/* --------------------
-   CONTACT
--------------------- */
-
-.contact-main {
-
-    font-size: clamp(30px, 5vw, 70px);
-
-    line-height: 1.1;
-
-}
-
-
-.contact-main a {
-
-    color: #111;
-
-    text-decoration: none;
-
-    border-bottom: 1px solid #111;
-
-}
-
-
-/* --------------------
+/* =====================
    FOOTER
--------------------- */
+===================== */
 
 footer {
 
-    border-top: 1px solid #ddd;
+    margin: 0 3.5%;
 
-    padding: 40px 4%;
+    padding: 30px 0 45px;
+
+    border-top: 1px solid #ddd;
 
     display: flex;
 
@@ -614,12 +214,11 @@ footer {
 }
 
 
-/* --------------------
+/* =====================
    MOBILE
--------------------- */
+===================== */
 
-@media (max-width: 700px) {
-
+@media (max-width: 800px) {
 
     header {
 
@@ -627,15 +226,11 @@ footer {
 
     }
 
-
     nav {
 
         gap: 12px;
 
-        overflow-x: auto;
-
     }
-
 
     nav a {
 
@@ -643,17 +238,7 @@ footer {
 
     }
 
-
-    .hero {
-
-        padding-left: 5%;
-
-        padding-right: 5%;
-
-    }
-
-
-    section {
+    main {
 
         padding-left: 5%;
 
@@ -661,44 +246,34 @@ footer {
 
     }
 
+    .works-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 40px 15px;
+
+    }
+
+    .work-large {
+
+        grid-column: span 2;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
 
     .works-grid {
 
         grid-template-columns: 1fr;
 
-        gap: 70px;
-
     }
 
+    .work-large {
 
-    .work-image {
-
-        aspect-ratio: 4 / 5;
-
-    }
-
-
-    .exhibition {
-
-        grid-template-columns: 60px 1fr;
-
-    }
-
-
-    .cv-row {
-
-        grid-template-columns: 60px 1fr;
-
-    }
-
-
-    footer {
-
-        padding-left: 5%;
-
-        padding-right: 5%;
-
-        gap: 20px;
+        grid-column: span 1;
 
     }
 
@@ -707,7 +282,6 @@ footer {
 </style>
 
 </head>
-
 
 
 <body>
@@ -726,28 +300,24 @@ footer {
 
     <nav>
 
-        <a href="#works">
+        <a href="index.html">
             WORKS
         </a>
 
-        <a href="#exhibitions">
+        <a href="exhibitions.html">
             EXHIBITIONS
         </a>
 
-        <a href="#performance">
+        <a href="performance.html">
             PERFORMANCE
         </a>
 
-        <a href="#about">
+        <a href="about.html">
             ABOUT
         </a>
 
-        <a href="#cv">
+        <a href="cv.html">
             CV
-        </a>
-
-        <a href="#contact">
-            CONTACT
         </a>
 
     </nav>
@@ -757,39 +327,12 @@ footer {
 
 
 <!-- =====================
-     HERO
-===================== -->
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <h1>
-            Fe:u Moon
-        </h1>
-
-
-        <p>
-
-            Artist working across painting,
-            drawing, performance, sculpture
-            and media.
-
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================
      WORKS
 ===================== -->
 
-<section id="works">
+<main>
 
-    <div class="section-label">
+    <div class="page-title">
         WORKS
     </div>
 
@@ -799,7 +342,8 @@ footer {
 
         <!-- WORK 01 -->
 
-        <article class="work">
+        <a class="work work-large"
+           href="#">
 
             <div class="work-image">
 
@@ -813,28 +357,23 @@ footer {
             <div class="work-info">
 
                 <div class="work-title">
-
                     Work Title
-
                 </div>
 
-
                 <div class="work-meta">
-
-                    2026<br>
-                    Mixed Media
-
+                    2026 · Installation / Video
                 </div>
 
             </div>
 
-        </article>
+        </a>
 
 
 
         <!-- WORK 02 -->
 
-        <article class="work">
+        <a class="work"
+           href="#">
 
             <div class="work-image">
 
@@ -848,28 +387,23 @@ footer {
             <div class="work-info">
 
                 <div class="work-title">
-
                     Work Title
-
                 </div>
 
-
                 <div class="work-meta">
-
-                    2026<br>
-                    Drawing
-
+                    2024 · Painting
                 </div>
 
             </div>
 
-        </article>
+        </a>
 
 
 
         <!-- WORK 03 -->
 
-        <article class="work">
+        <a class="work"
+           href="#">
 
             <div class="work-image">
 
@@ -883,28 +417,23 @@ footer {
             <div class="work-info">
 
                 <div class="work-title">
-
                     Work Title
-
                 </div>
 
-
                 <div class="work-meta">
-
-                    2025<br>
-                    Installation
-
+                    2022 · Installation
                 </div>
 
             </div>
 
-        </article>
+        </a>
 
 
 
         <!-- WORK 04 -->
 
-        <article class="work">
+        <a class="work"
+           href="#">
 
             <div class="work-image">
 
@@ -918,945 +447,82 @@ footer {
             <div class="work-info">
 
                 <div class="work-title">
-
                     Work Title
-
                 </div>
-
 
                 <div class="work-meta">
-
-                    2024<br>
-                    Painting
-
+                    2022 · Video
                 </div>
 
             </div>
 
-        </article>
-
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================
-     EXHIBITIONS
-===================== -->
-
-<section id="exhibitions">
-
-    <div class="section-label">
-        EXHIBITIONS
-    </div>
-
-
-    <div class="exhibition">
-
-        <div class="exhibition-year">
-            2024
-        </div>
-
-
-        <div>
-
-            <div class="exhibition-title">
-                첫날밤의 윤슬
-            </div>
-
-
-            <div class="exhibition-info">
-
-                Solo Exhibition<br>
-                South Korea
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================
-     PERFORMANCE
-===================== -->
-
-<section id="performance">
-
-    <div class="section-label">
-        PERFORMANCE
-    </div>
-
-
-    <div class="performance-title">
-
-        What Have We Lost Sight Of?
-
-    </div>
-
-
-    <div class="performance-description">
-
-        A performance and media work exploring
-        the relationship between bodies,
-        urban environments, images and systems.
-
-        <br><br>
-
-        Project description will be added here.
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================
-     ABOUT
-===================== -->
-
-<!-- =====================
-     ABOUT
-===================== -->
-
-<section id="about">
-
-    <div class="section-label">
-        ABOUT
-    </div>
-
-
-    <div class="about-layout">
-
-
-        <!-- LEFT : INTRO -->
-
-        <div class="about-intro">
-
-            <h2>
-                Fe:u Moon is a Korean
-                visual artist working across
-                painting, drawing, performance,
-                installation and media.
-            </h2>
-
-
-            <p>
-                Her practice moves between
-                different materials and forms,
-                exploring traces of human presence,
-                relationships, systems and the
-                spaces we inhabit.
-            </p>
-
-
-            <p>
-                Rather than remaining within a
-                single medium, she develops
-                interconnected works through
-                painting, installation, performance,
-                moving image and interactive media.
-            </p>
-
-        </div>
-
-
-
-        <!-- RIGHT : BIOGRAPHY -->
-
-        <div class="about-details">
-
-
-            <div class="about-group">
-
-                <h3>
-                    Education
-                </h3>
-
-                <div class="about-entry">
-
-                    <strong>
-                        Paris MJM Graphic Design
-                    </strong>
-
-                    <span>
-                        CSFP, Highest Honors
-                    </span>
-
-                    <span>
-                        Paris, France
-                    </span>
-
-                </div>
-
-
-                <div class="about-entry">
-
-                    <strong>
-                        Bordeaux Ecole des Beaux-Arts
-                    </strong>
-
-                    <span>
-                        B.A. — Installation & Performance
-                    </span>
-
-                    <span>
-                        Bordeaux, France
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="about-group">
-
-                <h3>
-                    Awards
-                </h3>
-
-                <div class="about-entry">
-
-                    <strong>
-                        2022
-                    </strong>
-
-                    <span>
-                        Young Artist Award,
-                        Christian Art Association
-                    </span>
-
-                </div>
-
-
-                <div class="about-entry">
-
-                    <strong>
-                        2020
-                    </strong>
-
-                    <span>
-                        Honorary Award,
-                        Australian VFX Film Festival
-                    </span>
-
-                    <span>
-                        <em>The Last Breath</em>
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="about-group">
-
-                <h3>
-                    Selected Solo Exhibitions
-                </h3>
-
-                <div class="about-entry">
-
-                    <strong>
-                        2024
-                    </strong>
-
-                    <span>
-                        <em>MoonLight in the Beginning</em>
-                        — 첫날, 밤의 윤슬
-                    </span>
-
-                    <span>
-                        Gallery Nava, Gwangmyeong, South Korea
-                    </span>
-
-                </div>
-
-
-                <div class="about-entry">
-
-                    <strong>
-                        2016
-                    </strong>
-
-                    <span>
-                        <em>Poser</em>
-                    </span>
-
-                    <span>
-                        Galerie La Reserve,
-                        Bordeaux, France
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="about-group">
-
-                <h3>
-                    Selected Activities
-                </h3>
-
-                <div class="about-entry">
-
-                    <strong>
-                        2026
-                    </strong>
-
-                    <span>
-                        Interactive media /
-                        performance
-                    </span>
-
-                    <span>
-                        OSC-based interaction
-                        and real-time media
-                    </span>
-
-                </div>
-
-
-                <div class="about-entry">
-
-                    <strong>
-                        2022–2023
-                    </strong>
-
-                    <span>
-                        Stone Production
-                    </span>
-
-                    <span>
-                        VFX Designer /
-                        Video Graphic Designer
-                    </span>
-
-                </div>
-
-
-                <div class="about-entry">
-
-                    <strong>
-                        2023
-                    </strong>
-
-                    <span>
-                        Red Breath
-                    </span>
-
-                    <span>
-                        Video production group
-                        organizer
-                    </span>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================
-     CV
-===================== -->
-
-<section id="cv">
-
-    <div class="section-label">
-        CV
-    </div>
-
-
-    <!-- EDUCATION -->
-
-    <div class="cv-category">
-
-        <h3>
-            Education
-        </h3>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                —
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    Paris MJM Graphic Design
-                </strong>
-
-                <span>
-                    CSFP, Highest Honors
-                </span>
-
-                <span>
-                    Paris, France
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                —
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    Bordeaux Ecole des Beaux-Arts
-                </strong>
-
-                <span>
-                    B.A. — Installation & Performance
-                </span>
-
-                <span>
-                    Bordeaux, France
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- AWARDS -->
-
-    <div class="cv-category">
-
-        <h3>
-            Awards
-        </h3>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2022.09
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    Young Artist Award
-                </strong>
-
-                <span>
-                    Christian Art Association
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2020.12
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    Honorary Award
-                </strong>
-
-                <span>
-                    Short Film <em>The Last Breath</em>
-                    — Australian VFX Film Festival
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- SOLO EXHIBITIONS -->
-
-    <div class="cv-category">
-
-        <h3>
-            Solo Exhibitions
-        </h3>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2024.08
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    MoonLight in the Beginning
-                </strong>
-
-                <span>
-                    첫날, 밤의 윤슬
-                </span>
-
-                <span>
-                    Gallery Nava, Gwangmyeong, South Korea
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2016.06
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    Poser
-                </strong>
-
-                <span>
-                    Installation Solo Exhibition
-                </span>
-
-                <span>
-                    Galerie La Reserve, Bordeaux, France
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- GROUP EXHIBITIONS -->
-
-    <div class="cv-category">
-
-        <h3>
-            Group Exhibitions
-        </h3>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2024.03
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    아직, ______있다
-                </strong>
-
-                <span>
-                    Gallery Insa1010, Seoul, South Korea
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2023.07
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    블루
-                </strong>
-
-                <span>
-                    Gallery 172g, Seoul, South Korea
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2023.02
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    어울림
-                </strong>
-
-                <span>
-                    Arisu Gallery, Insadong, Seoul, South Korea
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2022.10
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    하나님의 영광
-                </strong>
-
-                <span>
-                    Insa Art Plaza Gallery, Seoul, South Korea
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2022.05
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    Contact Youth
-                </strong>
-
-                <span>
-                    Suchang Youth Mansion, Daegu, South Korea
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2022.02
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    Soul and Spirit
-                </strong>
-
-                <span>
-                    Topohaus, Insadong, Seoul, South Korea
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2021.11
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    몽상가 프로젝트
-                </strong>
-
-                <span>
-                    Group Exhibition, Orangi, Dongdaemun, Seoul
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2016.11
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    Lucien is that you
-                </strong>
-
-                <span>
-                    Installation Group Exhibition,
-                    Zollamt, Offenbach, Germany
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2016.06
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    꿈의소리
-                </strong>
-
-                <span>
-                    Screening, Cinema Utopia Bordeaux,
-                    Bordeaux, France
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2009.11
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    Sculpture Exhibition
-                </strong>
-
-                <span>
-                    Art Factory, Heyri, South Korea
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- ACTIVITIES -->
-
-    <div class="cv-category">
-
-        <h3>
-            Activities
-        </h3>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2026
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    What Have We Lost Sight Of?
-                </strong>
-
-                <span>
-                    Interactive media / performance work
-                </span>
-
-                <span>
-                    OSC-based interaction and real-time media
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2022.04–2023.10
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    Stone Production
-                </strong>
-
-                <span>
-                    VFX Designer / Video Graphic Designer
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2023.06
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    Red Breath
-                </strong>
-
-                <span>
-                    Organizer, Video Production Group
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2021.10
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    Bplan Film
-                </strong>
-
-                <span>
-                    Video Crew
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2019.09
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    Côte d'Ivoire
-                </strong>
-
-                <span>
-                    Video Mission & Art Education
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-item">
-
-            <div class="cv-date">
-                2018.06
-            </div>
-
-            <div class="cv-content">
-
-                <strong>
-                    Monster Bass
-                </strong>
-
-                <span>
-                    Video Planning & Production
-                    for musician Skeels
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-</section>
-
-<!-- =====================
-     CONTACT
-===================== -->
-
-<section id="contact">
-
-    <div class="section-label">
-        CONTACT
-    </div>
-
-
-    <div class="contact-main">
-
-        For exhibitions,<br>
-
-        collaborations & artwork inquiries
-
-        <br><br>
-
-        <a href="mailto:YOUR-EMAIL@example.com">
-            Contact
         </a>
 
+
+
+        <!-- WORK 05 -->
+
+        <a class="work"
+           href="#">
+
+            <div class="work-image">
+
+                <span>
+                    IMAGE
+                </span>
+
+            </div>
+
+
+            <div class="work-info">
+
+                <div class="work-title">
+                    Work Title
+                </div>
+
+                <div class="work-meta">
+                    2021 · Drawing
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- WORK 06 -->
+
+        <a class="work work-large"
+           href="#">
+
+            <div class="work-image">
+
+                <span>
+                    IMAGE
+                </span>
+
+            </div>
+
+
+            <div class="work-info">
+
+                <div class="work-title">
+                    Work Title
+                </div>
+
+                <div class="work-meta">
+                    2020 · Painting
+                </div>
+
+            </div>
+
+        </a>
+
+
+
     </div>
 
-</section>
+</main>
 
 
 
@@ -1867,17 +533,11 @@ footer {
 <footer>
 
     <div>
-
-        © 2026 Fe:u Moon.
-        All rights reserved.
-
+        © 2026 Fe:u Moon. All rights reserved.
     </div>
 
-
     <div>
-
         Fe:u Moon
-
     </div>
 
 </footer>
