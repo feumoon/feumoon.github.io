@@ -1,530 +1,1013 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Fe:u Moon — Artist</title>
+<meta charset="UTF-8">
 
-  <meta name="description"
-        content="Official portfolio of artist Fe:u Moon. Painting, drawing, performance, sculpture and media art.">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<title>Fe:u Moon — Artist</title>
 
-    html {
-      scroll-behavior: smooth;
-    }
+<meta name="description"
+content="Fe:u Moon — artist working across painting, drawing, performance, sculpture and media.">
 
-    body {
-      margin: 0;
-      background: #ffffff;
-      color: #111111;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 400;
-    }
 
-    /* HEADER */
+<style>
+
+/* --------------------
+   BASIC
+-------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #ffffff;
+    color: #111111;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+
+/* --------------------
+   HEADER
+-------------------- */
+
+header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 100;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 26px 4%;
+
+    background: rgba(255,255,255,0.94);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.logo {
+
+    font-size: 20px;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+nav {
+
+    display: flex;
+
+    gap: 28px;
+
+}
+
+
+nav a {
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+nav a:hover {
+
+    opacity: 0.4;
+
+}
+
+
+/* --------------------
+   HERO
+-------------------- */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding: 0 4% 9vh;
+
+}
+
+
+.hero-content {
+
+    max-width: 900px;
+
+}
+
+
+.hero h1 {
+
+    margin: 0 0 28px;
+
+    font-size: clamp(48px, 8vw, 110px);
+
+    font-weight: 400;
+
+    letter-spacing: -5px;
+
+}
+
+
+.hero p {
+
+    margin: 0;
+
+    max-width: 600px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #555;
+
+}
+
+
+/* --------------------
+   SECTION
+-------------------- */
+
+section {
+
+    padding: 17vh 4%;
+
+}
+
+
+.section-label {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 70px;
+
+}
+
+
+/* --------------------
+   WORKS
+-------------------- */
+
+.works-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 9vw 5vw;
+
+}
+
+
+.work {
+
+    cursor: pointer;
+
+}
+
+
+.work-image {
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    background: #f1f1ef;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+
+}
+
+
+.work-image span {
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #aaa;
+
+}
+
+
+.work-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+.work-title {
+
+    font-size: 13px;
+
+}
+
+
+.work-meta {
+
+    font-size: 10px;
+
+    color: #777;
+
+    text-align: right;
+
+    line-height: 1.5;
+
+}
+
+
+.work:hover .work-image {
+
+    opacity: 0.85;
+
+}
+
+
+/* --------------------
+   EXHIBITIONS
+-------------------- */
+
+.exhibition {
+
+    border-top: 1px solid #ddd;
+
+    padding: 28px 0;
+
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 30px;
+
+}
+
+
+.exhibition:last-child {
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+
+.exhibition-year {
+
+    font-size: 11px;
+
+    color: #777;
+
+}
+
+
+.exhibition-title {
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.exhibition-info {
+
+    font-size: 12px;
+
+    color: #777;
+
+    line-height: 1.6;
+
+}
+
+
+/* --------------------
+   PERFORMANCE
+-------------------- */
+
+.performance-title {
+
+    max-width: 950px;
+
+    font-size: clamp(35px, 6vw, 80px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+}
+
+
+.performance-description {
+
+    max-width: 650px;
+
+    margin-top: 50px;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: #555;
+
+}
+
+
+/* --------------------
+   ABOUT
+-------------------- */
+
+.about-main {
+
+    max-width: 900px;
+
+    font-size: clamp(28px, 4vw, 55px);
+
+    line-height: 1.25;
+
+    letter-spacing: -1px;
+
+}
+
+
+.about-secondary {
+
+    max-width: 650px;
+
+    margin-top: 60px;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: #555;
+
+}
+
+
+/* --------------------
+   CV
+-------------------- */
+
+.cv-row {
+
+    display: grid;
+
+    grid-template-columns: 110px 1fr;
+
+    gap: 30px;
+
+    padding: 15px 0;
+
+    border-top: 1px solid #ddd;
+
+    font-size: 13px;
+
+}
+
+
+.cv-row:last-child {
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+
+/* --------------------
+   CONTACT
+-------------------- */
+
+.contact-main {
+
+    font-size: clamp(30px, 5vw, 70px);
+
+    line-height: 1.1;
+
+}
+
+
+.contact-main a {
+
+    color: #111;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #111;
+
+}
+
+
+/* --------------------
+   FOOTER
+-------------------- */
+
+footer {
+
+    border-top: 1px solid #ddd;
+
+    padding: 40px 4%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 10px;
+
+    color: #777;
+
+}
+
+
+/* --------------------
+   MOBILE
+-------------------- */
+
+@media (max-width: 700px) {
+
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 28px 4%;
-      background: rgba(255,255,255,0.94);
-      backdrop-filter: blur(8px);
+
+        padding: 20px 5%;
+
     }
 
-    .logo {
-      font-size: 21px;
-      letter-spacing: 0.5px;
-      white-space: nowrap;
-    }
 
     nav {
-      display: flex;
-      gap: 28px;
+
+        gap: 12px;
+
+        overflow-x: auto;
+
     }
+
 
     nav a {
-      color: #111;
-      text-decoration: none;
-      font-size: 11px;
-      letter-spacing: 1.5px;
+
+        font-size: 8px;
+
     }
 
-    nav a:hover {
-      opacity: 0.45;
+
+    .hero {
+
+        padding-left: 5%;
+
+        padding-right: 5%;
+
     }
 
-    /* INTRO */
 
-    .intro {
-      min-height: 34vh;
-      display: flex;
-      align-items: flex-end;
-      padding: 8vh 4% 5vh;
+    section {
+
+        padding-left: 5%;
+
+        padding-right: 5%;
+
     }
 
-    .intro h1 {
-      margin: 0;
-      max-width: 850px;
-      font-size: clamp(32px, 5vw, 72px);
-      line-height: 1.08;
-      font-weight: 400;
-      letter-spacing: -2px;
+
+    .works-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+
     }
 
-    /* FILTER */
 
-    .filters {
-      padding: 15px 4% 45px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+    .work-image {
+
+        aspect-ratio: 4 / 5;
+
     }
 
-    .filter-btn {
-      border: none;
-      background: none;
-      padding: 0;
-      cursor: pointer;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      color: #777;
+
+    .exhibition {
+
+        grid-template-columns: 60px 1fr;
+
     }
 
-    .filter-btn:hover,
-    .filter-btn.active {
-      color: #111;
-    }
-
-    /* WORK */
-
-    .works {
-      padding: 0 4%;
-    }
-
-    .project {
-      margin-bottom: 14vh;
-    }
-
-    .project-image {
-      width: 100%;
-      height: min(78vh, 900px);
-      background: #eeeeec;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .project-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-
-    .placeholder {
-      font-size: 10px;
-      letter-spacing: 2px;
-      color: #999;
-    }
-
-    .project-info {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      padding-top: 14px;
-      font-size: 11px;
-      line-height: 1.6;
-    }
-
-    .project-title {
-      font-size: 12px;
-    }
-
-    .project-meta {
-      color: #777;
-      text-align: right;
-    }
-
-    /* TEXT SECTIONS */
-
-    .text-section {
-      padding: 18vh 4%;
-      border-top: 1px solid #e8e8e8;
-    }
-
-    .section-label {
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      margin-bottom: 50px;
-    }
-
-    .statement {
-      max-width: 850px;
-      font-size: clamp(22px, 3vw, 43px);
-      line-height: 1.3;
-      letter-spacing: -0.7px;
-    }
-
-    .small-text {
-      max-width: 620px;
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    /* EXHIBITIONS / CV */
 
     .cv-row {
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 25px;
-      padding: 13px 0;
-      border-top: 1px solid #eee;
-      font-size: 13px;
-      line-height: 1.5;
+
+        grid-template-columns: 60px 1fr;
+
     }
 
-    /* CONTACT */
-
-    .contact a {
-      color: #111;
-      text-decoration: none;
-      border-bottom: 1px solid #111;
-    }
-
-    /* FOOTER */
 
     footer {
-      display: flex;
-      justify-content: space-between;
-      padding: 50px 4%;
-      font-size: 10px;
-      color: #777;
-      border-top: 1px solid #eee;
+
+        padding-left: 5%;
+
+        padding-right: 5%;
+
+        gap: 20px;
+
     }
 
-    /* MOBILE */
+}
 
-    @media (max-width: 750px) {
+</style>
 
-      header {
-        padding: 22px 5%;
-      }
-
-      nav {
-        gap: 13px;
-        overflow-x: auto;
-      }
-
-      nav a {
-        font-size: 9px;
-      }
-
-      .intro {
-        min-height: 28vh;
-        padding-left: 5%;
-        padding-right: 5%;
-      }
-
-      .filters,
-      .works,
-      .text-section {
-        padding-left: 5%;
-        padding-right: 5%;
-      }
-
-      .project {
-        margin-bottom: 10vh;
-      }
-
-      .project-image {
-        height: 62vh;
-      }
-
-      .project-info {
-        flex-direction: column;
-        gap: 3px;
-      }
-
-      .project-meta {
-        text-align: left;
-      }
-
-      .cv-row {
-        grid-template-columns: 70px 1fr;
-      }
-    }
-  </style>
 </head>
+
+
 
 <body>
 
-<header>
-  <div class="logo">Fe:u Moon</div>
 
-  <nav>
-    <a href="#works">WORKS</a>
-    <a href="#performance">PERFORMANCE</a>
-    <a href="#exhibitions">EXHIBITIONS</a>
-    <a href="#about">ABOUT</a>
-    <a href="#cv">CV</a>
-  </nav>
+<!-- =====================
+     HEADER
+===================== -->
+
+<header>
+
+    <div class="logo">
+        Fe:u Moon
+    </div>
+
+
+    <nav>
+
+        <a href="#works">
+            WORKS
+        </a>
+
+        <a href="#exhibitions">
+            EXHIBITIONS
+        </a>
+
+        <a href="#performance">
+            PERFORMANCE
+        </a>
+
+        <a href="#about">
+            ABOUT
+        </a>
+
+        <a href="#cv">
+            CV
+        </a>
+
+        <a href="#contact">
+            CONTACT
+        </a>
+
+    </nav>
+
 </header>
 
 
-<section class="intro">
-  <h1>
-    Fe:u Moon
-  </h1>
+
+<!-- =====================
+     HERO
+===================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Fe:u Moon
+        </h1>
+
+
+        <p>
+
+            Artist working across painting,
+            drawing, performance, sculpture
+            and media.
+
+        </p>
+
+    </div>
+
 </section>
 
+
+
+<!-- =====================
+     WORKS
+===================== -->
 
 <section id="works">
 
-  <div class="filters">
-    <button class="filter-btn active" data-filter="all">ALL</button>
-    <button class="filter-btn" data-filter="painting">PAINTING</button>
-    <button class="filter-btn" data-filter="drawing">DRAWING</button>
-    <button class="filter-btn" data-filter="sculpture">SCULPTURE</button>
-    <button class="filter-btn" data-filter="media">MEDIA</button>
-    <button class="filter-btn" data-filter="performance">PERFORMANCE</button>
-  </div>
-
-
-  <div class="works">
-
-    <!-- PROJECT 01 -->
-
-    <article class="project" data-category="painting">
-
-    <div class="project-image">
-    <img src="line-01.jpg" alt="Line, artwork by Fe:u Moon">
+    <div class="section-label">
+        WORKS
     </div>
-      
-      <div class="project-info">
+
+
+    <div class="works-grid">
+
+
+        <!-- WORK 01 -->
+
+        <article class="work">
+
+            <div class="work-image">
+
+                <span>
+                    IMAGE
+                </span>
+
+            </div>
+
+
+            <div class="work-info">
+
+                <div class="work-title">
+
+                    Work Title
+
+                </div>
+
+
+                <div class="work-meta">
+
+                    2026<br>
+                    Mixed Media
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- WORK 02 -->
+
+        <article class="work">
+
+            <div class="work-image">
+
+                <span>
+                    IMAGE
+                </span>
+
+            </div>
+
+
+            <div class="work-info">
+
+                <div class="work-title">
+
+                    Work Title
+
+                </div>
+
+
+                <div class="work-meta">
+
+                    2026<br>
+                    Drawing
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- WORK 03 -->
+
+        <article class="work">
+
+            <div class="work-image">
+
+                <span>
+                    IMAGE
+                </span>
+
+            </div>
+
+
+            <div class="work-info">
+
+                <div class="work-title">
+
+                    Work Title
+
+                </div>
+
+
+                <div class="work-meta">
+
+                    2025<br>
+                    Installation
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- WORK 04 -->
+
+        <article class="work">
+
+            <div class="work-image">
+
+                <span>
+                    IMAGE
+                </span>
+
+            </div>
+
+
+            <div class="work-info">
+
+                <div class="work-title">
+
+                    Work Title
+
+                </div>
+
+
+                <div class="work-meta">
+
+                    2024<br>
+                    Painting
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================
+     EXHIBITIONS
+===================== -->
+
+<section id="exhibitions">
+
+    <div class="section-label">
+        EXHIBITIONS
+    </div>
+
+
+    <div class="exhibition">
+
+        <div class="exhibition-year">
+            2024
+        </div>
+
 
         <div>
-          <div class="project-title">Line</div>
-          <div>Series</div>
+
+            <div class="exhibition-title">
+                첫날밤의 윤슬
+            </div>
+
+
+            <div class="exhibition-info">
+
+                Solo Exhibition<br>
+                South Korea
+
+            </div>
+
         </div>
 
-        <div class="project-meta">
-          Painting / Mixed Media<br>
-          2026
-        </div>
-
-      </div>
-    </article>
+    </div>
 
 
-    <!-- PROJECT 02 -->
+</section>
 
-    <article class="project" data-category="performance media">
 
-      <div class="project-image">
-        <span class="placeholder">IMAGE — SERIES 02</span>
-      </div>
 
-      <div class="project-info">
+<!-- =====================
+     PERFORMANCE
+===================== -->
+
+<section id="performance">
+
+    <div class="section-label">
+        PERFORMANCE
+    </div>
+
+
+    <div class="performance-title">
+
+        What Have We Lost Sight Of?
+
+    </div>
+
+
+    <div class="performance-description">
+
+        A performance and media work exploring
+        the relationship between bodies,
+        urban environments, images and systems.
+
+        <br><br>
+
+        Project description will be added here.
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================
+     ABOUT
+===================== -->
+
+<section id="about">
+
+    <div class="section-label">
+        ABOUT
+    </div>
+
+
+    <div class="about-main">
+
+        Fe:u Moon works across painting,
+        drawing, performance, sculpture
+        and media.
+
+    </div>
+
+
+    <div class="about-secondary">
+
+        Her practice develops through
+        interconnected works and series,
+        allowing questions and sensations
+        to move between different materials,
+        bodies, images and spaces.
+
+        <br><br>
+
+        Artist statement will be developed
+        here.
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================
+     CV
+===================== -->
+
+<section id="cv">
+
+    <div class="section-label">
+        CV
+    </div>
+
+
+    <div class="cv-row">
 
         <div>
-          <div class="project-title">
-            What Have We Lost Sight Of?
-          </div>
-          <div>Series</div>
+            2026
         </div>
-
-        <div class="project-meta">
-          Performance / Media Art<br>
-          2026
-        </div>
-
-      </div>
-    </article>
-
-
-    <!-- PROJECT 03 -->
-
-    <article class="project" data-category="drawing">
-
-      <div class="project-image">
-        <span class="placeholder">IMAGE — DRAWING</span>
-      </div>
-
-      <div class="project-info">
 
         <div>
-          <div class="project-title">Drawings</div>
-          <div>Selected Works</div>
+            Exhibitions / Performances
         </div>
 
-        <div class="project-meta">
-          Drawing<br>
-          2026
-        </div>
-
-      </div>
-    </article>
+    </div>
 
 
-    <!-- PROJECT 04 -->
-
-    <article class="project" data-category="sculpture">
-
-      <div class="project-image">
-        <span class="placeholder">IMAGE — OBJECT / SCULPTURE</span>
-      </div>
-
-      <div class="project-info">
+    <div class="cv-row">
 
         <div>
-          <div class="project-title">Objects</div>
-          <div>Selected Works</div>
+            2024
         </div>
 
-        <div class="project-meta">
-          Sculpture / Installation
+        <div>
+            Exhibitions
         </div>
 
-      </div>
-    </article>
+    </div>
 
 
-  </div>
+    <div class="cv-row">
 
-</section>
+        <div>
+            Education
+        </div>
 
+        <div>
+            Education information
+        </div>
 
-<section id="performance" class="text-section">
-
-  <div class="section-label">PERFORMANCE</div>
-
-  <div class="statement">
-    Performance, sound, moving image and physical traces
-    intersect within Fe:u Moon's practice.
-  </div>
+    </div>
 
 </section>
 
 
-<section id="exhibitions" class="text-section">
 
-  <div class="section-label">SELECTED EXHIBITIONS</div>
+<!-- =====================
+     CONTACT
+===================== -->
 
-  <div class="cv-row">
-    <div>2026</div>
-    <div>Seoul Fringe Festival — Seoul, South Korea</div>
-  </div>
+<section id="contact">
 
-  <div class="cv-row">
-    <div>2026</div>
-    <div>Exhibition information will be added here.</div>
-  </div>
-
-</section>
+    <div class="section-label">
+        CONTACT
+    </div>
 
 
-<section id="about" class="text-section">
+    <div class="contact-main">
 
-  <div class="section-label">ABOUT</div>
+        For exhibitions,<br>
 
-  <div class="statement">
-    Fe:u Moon works across painting, drawing,
-    performance, sculpture and media.
-  </div>
+        collaborations & artwork inquiries
 
-  <br><br>
+        <br><br>
 
-  <div class="small-text">
-    Her practice develops through interconnected series,
-    allowing a single question or sensation to move between
-    different materials, images, bodies and spaces.
+        <a href="mailto:YOUR-EMAIL@example.com">
+            Contact
+        </a>
 
-    <br><br>
-
-    Full artist statement will be added here.
-  </div>
+    </div>
 
 </section>
 
 
-<section id="cv" class="text-section">
 
-  <div class="section-label">CV</div>
-
-  <div class="cv-row">
-    <div>2026</div>
-    <div>CV information</div>
-  </div>
-
-  <div class="cv-row">
-    <div>2025</div>
-    <div>CV information</div>
-  </div>
-
-</section>
-
-
-<section class="text-section contact">
-
-  <div class="section-label">CONTACT</div>
-
-  <div class="small-text">
-    For exhibitions, collaborations and artwork inquiries,
-    please contact
-    <a href="mailto:YOUR-EMAIL@example.com">email</a>.
-  </div>
-
-</section>
-
+<!-- =====================
+     FOOTER
+===================== -->
 
 <footer>
-  <div>© 2026 Fe:u Moon. All rights reserved.</div>
-  <div>Seoul, South Korea</div>
+
+    <div>
+
+        © 2026 Fe:u Moon.
+        All rights reserved.
+
+    </div>
+
+
+    <div>
+
+        Fe:u Moon
+
+    </div>
+
 </footer>
 
 
-<script>
-
-  const buttons = document.querySelectorAll('.filter-btn');
-  const projects = document.querySelectorAll('.project');
-
-  buttons.forEach(button => {
-
-    button.addEventListener('click', () => {
-
-      buttons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      const filter = button.dataset.filter;
-
-      projects.forEach(project => {
-
-        const categories = project.dataset.category;
-
-        if (filter === 'all' || categories.includes(filter)) {
-          project.style.display = 'block';
-        } else {
-          project.style.display = 'none';
-        }
-
-      });
-
-    });
-
-  });
-
-</script>
-
-
 </body>
+
 </html>
