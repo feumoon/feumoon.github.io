@@ -28,6 +28,7 @@
     }
 
     /* HEADER */
+
     header {
       position: fixed;
       top: 0;
@@ -66,7 +67,9 @@
       opacity: 0.45;
     }
 
+
     /* INTRO */
+
     .intro {
       padding: 150px 32px 80px;
       max-width: 900px;
@@ -74,6 +77,7 @@
 
     .intro h1 {
       margin: 0 0 30px;
+
       font-size: 42px;
       font-weight: 400;
       letter-spacing: 0.02em;
@@ -82,7 +86,6 @@
     .intro-text {
       font-size: 20px;
       line-height: 1.5;
-      font-weight: 400;
       max-width: 650px;
     }
 
@@ -92,11 +95,14 @@
 
     .intro-text .sub {
       margin-top: 8px;
+
       font-size: 16px;
       color: #555;
     }
 
-    /* DRAWINGS GRID */
+
+    /* DRAWINGS */
+
     .drawings {
       padding: 0 32px 140px;
     }
@@ -108,7 +114,10 @@
     }
 
     .drawing-card {
-      position: relative;
+      cursor: pointer;
+    }
+
+    .image-wrap {
       overflow: hidden;
       background: #f2f2f2;
     }
@@ -117,6 +126,7 @@
       display: block;
       width: 100%;
       height: auto;
+
       transition: transform 0.5s ease;
     }
 
@@ -126,6 +136,7 @@
 
     .drawing-info {
       padding: 12px 2px 28px;
+
       font-size: 11px;
       line-height: 1.5;
       letter-spacing: 0.02em;
@@ -140,14 +151,104 @@
       color: #666;
     }
 
+    .status {
+      margin-top: 7px;
+      font-size: 11px;
+    }
+
+    .inquire {
+      border-bottom: 1px solid #111;
+    }
+
+    .sold {
+      color: #888;
+    }
+
+
+    /* LIGHTBOX */
+
+    .lightbox {
+      display: none;
+
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+
+      background: rgba(255, 255, 255, 0.97);
+
+      padding: 60px 50px;
+    }
+
+    .lightbox.active {
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 90vh;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 85vw;
+      max-height: 75vh;
+
+      width: auto;
+      height: auto;
+
+      object-fit: contain;
+    }
+
+    .lightbox-info {
+      width: 100%;
+      padding-top: 20px;
+
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .lightbox-title {
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .lightbox-details {
+      color: #666;
+    }
+
+    .lightbox-status {
+      margin-top: 7px;
+    }
+
+    .close {
+      position: fixed;
+      top: 25px;
+      right: 32px;
+
+      font-size: 24px;
+      font-weight: 300;
+
+      cursor: pointer;
+    }
+
+
     /* CONTACT */
+
     .contact {
       padding: 100px 32px 120px;
+
       border-top: 1px solid #ddd;
     }
 
     .contact h2 {
       margin: 0 0 24px;
+
       font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.12em;
@@ -162,16 +263,22 @@
       border-bottom: 1px solid #111;
     }
 
+
     /* FOOTER */
+
     footer {
       padding: 24px 32px;
+
       border-top: 1px solid #ddd;
+
       font-size: 10px;
       color: #777;
       letter-spacing: 0.04em;
     }
 
+
     /* MOBILE */
+
     @media (max-width: 800px) {
 
       header {
@@ -213,6 +320,7 @@
       }
     }
 
+
     @media (max-width: 520px) {
 
       nav {
@@ -223,14 +331,31 @@
       .drawing-grid {
         grid-template-columns: 1fr;
       }
+
+      .lightbox {
+        padding: 50px 20px;
+      }
+
+      .lightbox img {
+        max-width: 92vw;
+        max-height: 70vh;
+      }
+
+      .close {
+        top: 18px;
+        right: 20px;
+      }
     }
+
   </style>
 </head>
 
 
 <body>
 
+
   <!-- HEADER -->
+
   <header>
 
     <a href="index.html" class="logo">
@@ -238,18 +363,27 @@
     </a>
 
     <nav>
+
       <a href="index.html">WORKS</a>
+
       <a href="exhibitions.html">EXHIBITIONS</a>
+
       <a href="performance.html">PERFORMANCE</a>
+
       <a href="drawings.html">圖畫</a>
+
       <a href="about.html">ABOUT</a>
+
       <a href="cv.html">CV</a>
+
     </nav>
 
   </header>
 
 
+
   <!-- INTRO -->
+
   <section class="intro">
 
     <h1>圖畫</h1>
@@ -267,141 +401,465 @@
   </section>
 
 
+
   <!-- DRAWINGS -->
+
   <section class="drawings">
 
     <div class="drawing-grid">
 
-      <!-- DRAWING 01 -->
-      <div class="drawing-card">
 
-        <img
-          src="images/drawings/drawing-01.jpg"
-          alt="Drawing 01"
-        >
+      <!-- DRAWING 01 -->
+
+      <div
+        class="drawing-card"
+        onclick="openLightbox(
+          'images/drawings/drawing-01.jpg',
+          'Untitled',
+          'Ink on paper · 2026',
+          'available'
+        )"
+      >
+
+        <div class="image-wrap">
+
+          <img
+            src="images/drawings/drawing-01.jpg"
+            alt="Drawing 01"
+          >
+
+        </div>
 
         <div class="drawing-info">
-          <div class="title">Untitled</div>
+
+          <div class="title">
+            Untitled
+          </div>
+
           <div class="details">
             Ink on paper · 2026
           </div>
+
+          <div class="status">
+
+            <a
+              class="inquire"
+              href="mailto:moonjiyoung218@gmail.com?subject=Artwork%20Inquiry%20%E2%80%94%20Untitled"
+              onclick="event.stopPropagation();"
+            >
+              Available · Inquire →
+            </a>
+
+          </div>
+
         </div>
 
       </div>
+
 
 
       <!-- DRAWING 02 -->
-      <div class="drawing-card">
 
-        <img
-          src="images/drawings/drawing-02.jpg"
-          alt="Drawing 02"
-        >
+      <div
+        class="drawing-card"
+        onclick="openLightbox(
+          'images/drawings/drawing-02.jpg',
+          'Untitled',
+          'Mixed media on paper · 2026',
+          'available'
+        )"
+      >
+
+        <div class="image-wrap">
+
+          <img
+            src="images/drawings/drawing-02.jpg"
+            alt="Drawing 02"
+          >
+
+        </div>
 
         <div class="drawing-info">
-          <div class="title">Untitled</div>
+
+          <div class="title">
+            Untitled
+          </div>
+
           <div class="details">
             Mixed media on paper · 2026
           </div>
+
+          <div class="status">
+
+            <a
+              class="inquire"
+              href="mailto:moonjiyoung218@gmail.com?subject=Artwork%20Inquiry%20%E2%80%94%20Untitled"
+              onclick="event.stopPropagation();"
+            >
+              Available · Inquire →
+            </a>
+
+          </div>
+
         </div>
 
       </div>
+
 
 
       <!-- DRAWING 03 -->
-      <div class="drawing-card">
 
-        <img
-          src="images/drawings/drawing-03.jpg"
-          alt="Drawing 03"
-        >
+      <div
+        class="drawing-card"
+        onclick="openLightbox(
+          'images/drawings/drawing-03.jpg',
+          'Untitled',
+          'Drawing on paper · 2026',
+          'available'
+        )"
+      >
+
+        <div class="image-wrap">
+
+          <img
+            src="images/drawings/drawing-03.jpg"
+            alt="Drawing 03"
+          >
+
+        </div>
 
         <div class="drawing-info">
-          <div class="title">Untitled</div>
+
+          <div class="title">
+            Untitled
+          </div>
+
           <div class="details">
             Drawing on paper · 2026
           </div>
+
+          <div class="status">
+
+            <a
+              class="inquire"
+              href="mailto:moonjiyoung218@gmail.com?subject=Artwork%20Inquiry%20%E2%80%94%20Untitled"
+              onclick="event.stopPropagation();"
+            >
+              Available · Inquire →
+            </a>
+
+          </div>
+
         </div>
 
       </div>
+
 
 
       <!-- DRAWING 04 -->
-      <div class="drawing-card">
 
-        <img
-          src="images/drawings/drawing-04.jpg"
-          alt="Drawing 04"
-        >
+      <div
+        class="drawing-card"
+        onclick="openLightbox(
+          'images/drawings/drawing-04.jpg',
+          'Untitled',
+          'Ink on paper · 2026',
+          'sold'
+        )"
+      >
+
+        <div class="image-wrap">
+
+          <img
+            src="images/drawings/drawing-04.jpg"
+            alt="Drawing 04"
+          >
+
+        </div>
 
         <div class="drawing-info">
-          <div class="title">Untitled</div>
+
+          <div class="title">
+            Untitled
+          </div>
+
           <div class="details">
             Ink on paper · 2026
           </div>
+
+          <div class="status sold">
+            Sold
+          </div>
+
         </div>
 
       </div>
 
+      
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+솔드 구분법
+
+솔드:
+<div class="status sold">
+  Sold
+</div>
+
+판매:
+<div class="status">
+  <a
+    class="inquire"
+    href="mailto:moonjiyoung218@gmail.com?subject=Artwork%20Inquiry%20%E2%80%94%20Untitled"
+    onclick="event.stopPropagation();"
+  >
+    Available · Inquire →
+  </a>
+</div>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+        
 
       <!-- DRAWING 05 -->
-      <div class="drawing-card">
 
-        <img
-          src="images/drawings/drawing-05.jpg"
-          alt="Drawing 05"
-        >
+      <div
+        class="drawing-card"
+        onclick="openLightbox(
+          'images/drawings/drawing-05.jpg',
+          'Untitled',
+          'Mixed media on paper · 2026',
+          'sold'
+        )"
+      >
+
+        <div class="image-wrap">
+
+          <img
+            src="images/drawings/drawing-05.jpg"
+            alt="Drawing 05"
+          >
+
+        </div>
 
         <div class="drawing-info">
-          <div class="title">Untitled</div>
+
+          <div class="title">
+            Untitled
+          </div>
+
           <div class="details">
             Mixed media on paper · 2026
           </div>
+
+          <div class="status sold">
+            Sold
+          </div>
+
         </div>
 
       </div>
+
 
 
       <!-- DRAWING 06 -->
-      <div class="drawing-card">
 
-        <img
-          src="images/drawings/drawing-06.jpg"
-          alt="Drawing 06"
-        >
+      <div
+        class="drawing-card"
+        onclick="openLightbox(
+          'images/drawings/drawing-06.jpg',
+          'Untitled',
+          'Drawing on paper · 2026',
+          'sold'
+        )"
+      >
+
+        <div class="image-wrap">
+
+          <img
+            src="images/drawings/drawing-06.jpg"
+            alt="Drawing 06"
+          >
+
+        </div>
 
         <div class="drawing-info">
-          <div class="title">Untitled</div>
+
+          <div class="title">
+            Untitled
+          </div>
+
           <div class="details">
             Drawing on paper · 2026
           </div>
+
+          <div class="status sold">
+            Sold
+          </div>
+
         </div>
 
       </div>
+
 
     </div>
 
   </section>
 
 
+
+  <!-- LIGHTBOX -->
+
+  <div
+    class="lightbox"
+    id="lightbox"
+    onclick="closeLightbox()"
+  >
+
+    <div
+      class="close"
+      onclick="closeLightbox()"
+    >
+      ×
+    </div>
+
+
+    <div
+      class="lightbox-content"
+      onclick="event.stopPropagation();"
+    >
+
+      <img
+        id="lightbox-image"
+        src=""
+        alt=""
+      >
+
+      <div class="lightbox-info">
+
+        <div
+          class="lightbox-title"
+          id="lightbox-title"
+        ></div>
+
+        <div
+          class="lightbox-details"
+          id="lightbox-details"
+        ></div>
+
+        <div
+          class="lightbox-status"
+          id="lightbox-status"
+        ></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
   <!-- CONTACT -->
+
   <section class="contact">
 
     <h2>CONTACT</h2>
 
     <p>
-      <a href="mailto:YOUR-EMAIL@example.com">
-        YOUR-EMAIL@example.com
+      <a href="mailto:moonjiyoung218@gmail.com">
+        moonjiyoung218@gmail.com
       </a>
     </p>
 
   </section>
 
 
+
   <!-- FOOTER -->
+
   <footer>
+
     © 2026 Fe:u Moon. All rights reserved.
+
   </footer>
+
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function openLightbox(image, title, details, status) {
+
+      const lightbox =
+        document.getElementById("lightbox");
+
+      const lightboxImage =
+        document.getElementById("lightbox-image");
+
+      const lightboxTitle =
+        document.getElementById("lightbox-title");
+
+      const lightboxDetails =
+        document.getElementById("lightbox-details");
+
+      const lightboxStatus =
+        document.getElementById("lightbox-status");
+
+
+      lightboxImage.src = image;
+
+      lightboxTitle.textContent = title;
+
+      lightboxDetails.textContent = details;
+
+
+      if (status === "available") {
+
+        lightboxStatus.innerHTML =
+          '<a class="inquire" href="mailto:moonjiyoung218@gmail.com?subject=Artwork%20Inquiry%20%E2%80%94%20' +
+          encodeURIComponent(title) +
+          '">Available · Inquire →</a>';
+
+      } else {
+
+        lightboxStatus.innerHTML =
+          '<span class="sold">Sold</span>';
+
+      }
+
+
+      lightbox.classList.add("active");
+
+      document.body.style.overflow = "hidden";
+
+    }
+
+
+    function closeLightbox() {
+
+      const lightbox =
+        document.getElementById("lightbox");
+
+      lightbox.classList.remove("active");
+
+      document.body.style.overflow = "";
+
+    }
+
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (event.key === "Escape") {
+
+          closeLightbox();
+
+        }
+
+      }
+    );
+
+  </script>
 
 
 </body>
