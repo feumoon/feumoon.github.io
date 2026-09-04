@@ -391,30 +391,70 @@ section {
    CV
 -------------------- */
 
-.cv-row {
+.cv-category {
+    margin-bottom: 110px;
+}
 
+.cv-category h3 {
+    margin: 0 0 35px;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.cv-item {
     display: grid;
-
-    grid-template-columns: 110px 1fr;
-
-    gap: 30px;
-
-    padding: 15px 0;
-
+    grid-template-columns: 120px 1fr;
+    gap: 35px;
+    padding: 20px 0;
     border-top: 1px solid #ddd;
-
-    font-size: 13px;
-
 }
 
-
-.cv-row:last-child {
-
+.cv-category .cv-item:last-child {
     border-bottom: 1px solid #ddd;
+}
 
+.cv-date {
+    font-size: 11px;
+    color: #777;
+}
+
+.cv-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.cv-content strong {
+    font-weight: 400;
+}
+
+.cv-content span {
+    color: #777;
+}
+
+.cv-content em {
+    font-style: italic;
 }
 
 
+@media (max-width: 700px) {
+
+    .cv-category {
+        margin-bottom: 80px;
+    }
+
+    .cv-item {
+        grid-template-columns: 75px 1fr;
+        gap: 20px;
+    }
+
+}
+
+   
 /* --------------------
    CONTACT
 -------------------- */
@@ -914,47 +954,552 @@ footer {
     </div>
 
 
-    <div class="cv-row">
+    <!-- EDUCATION -->
 
-        <div>
-            2026
-        </div>
+    <div class="cv-category">
 
-        <div>
-            Exhibitions / Performances
-        </div>
-
-    </div>
-
-
-    <div class="cv-row">
-
-        <div>
-            2024
-        </div>
-
-        <div>
-            Exhibitions
-        </div>
-
-    </div>
-
-
-    <div class="cv-row">
-
-        <div>
+        <h3>
             Education
+        </h3>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                —
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    Paris MJM Graphic Design
+                </strong>
+
+                <span>
+                    CSFP, Highest Honors
+                </span>
+
+                <span>
+                    Paris, France
+                </span>
+
+            </div>
+
         </div>
 
-        <div>
-            Education information
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                —
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    Bordeaux Ecole des Beaux-Arts
+                </strong>
+
+                <span>
+                    B.A. — Installation & Performance
+                </span>
+
+                <span>
+                    Bordeaux, France
+                </span>
+
+            </div>
+
         </div>
 
     </div>
+
+
+
+    <!-- AWARDS -->
+
+    <div class="cv-category">
+
+        <h3>
+            Awards
+        </h3>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2022.09
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    Young Artist Award
+                </strong>
+
+                <span>
+                    Christian Art Association
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2020.12
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    Honorary Award
+                </strong>
+
+                <span>
+                    Short Film <em>The Last Breath</em>
+                    — Australian VFX Film Festival
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SOLO EXHIBITIONS -->
+
+    <div class="cv-category">
+
+        <h3>
+            Solo Exhibitions
+        </h3>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2024.08
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    MoonLight in the Beginning
+                </strong>
+
+                <span>
+                    첫날, 밤의 윤슬
+                </span>
+
+                <span>
+                    Gallery Nava, Gwangmyeong, South Korea
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2016.06
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    Poser
+                </strong>
+
+                <span>
+                    Installation Solo Exhibition
+                </span>
+
+                <span>
+                    Galerie La Reserve, Bordeaux, France
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- GROUP EXHIBITIONS -->
+
+    <div class="cv-category">
+
+        <h3>
+            Group Exhibitions
+        </h3>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2024.03
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    아직, ______있다
+                </strong>
+
+                <span>
+                    Gallery Insa1010, Seoul, South Korea
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2023.07
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    블루
+                </strong>
+
+                <span>
+                    Gallery 172g, Seoul, South Korea
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2023.02
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    어울림
+                </strong>
+
+                <span>
+                    Arisu Gallery, Insadong, Seoul, South Korea
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2022.10
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    하나님의 영광
+                </strong>
+
+                <span>
+                    Insa Art Plaza Gallery, Seoul, South Korea
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2022.05
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    Contact Youth
+                </strong>
+
+                <span>
+                    Suchang Youth Mansion, Daegu, South Korea
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2022.02
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    Soul and Spirit
+                </strong>
+
+                <span>
+                    Topohaus, Insadong, Seoul, South Korea
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2021.11
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    몽상가 프로젝트
+                </strong>
+
+                <span>
+                    Group Exhibition, Orangi, Dongdaemun, Seoul
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2016.11
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    Lucien is that you
+                </strong>
+
+                <span>
+                    Installation Group Exhibition,
+                    Zollamt, Offenbach, Germany
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2016.06
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    꿈의소리
+                </strong>
+
+                <span>
+                    Screening, Cinema Utopia Bordeaux,
+                    Bordeaux, France
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2009.11
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    Sculpture Exhibition
+                </strong>
+
+                <span>
+                    Art Factory, Heyri, South Korea
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ACTIVITIES -->
+
+    <div class="cv-category">
+
+        <h3>
+            Activities
+        </h3>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2026
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    What Have We Lost Sight Of?
+                </strong>
+
+                <span>
+                    Interactive media / performance work
+                </span>
+
+                <span>
+                    OSC-based interaction and real-time media
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2022.04–2023.10
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    Stone Production
+                </strong>
+
+                <span>
+                    VFX Designer / Video Graphic Designer
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2023.06
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    Red Breath
+                </strong>
+
+                <span>
+                    Organizer, Video Production Group
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2021.10
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    Bplan Film
+                </strong>
+
+                <span>
+                    Video Crew
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2019.09
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    Côte d'Ivoire
+                </strong>
+
+                <span>
+                    Video Mission & Art Education
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-item">
+
+            <div class="cv-date">
+                2018.06
+            </div>
+
+            <div class="cv-content">
+
+                <strong>
+                    Monster Bass
+                </strong>
+
+                <span>
+                    Video Planning & Production
+                    for musician Skeels
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
 
 </section>
-
-
 
 <!-- =====================
      CONTACT
