@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <title>圖畫 — Fe:u Moon</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -27,7 +29,10 @@
       text-decoration: none;
     }
 
-    /* HEADER */
+
+    /* =====================
+       HEADER
+       ===================== */
 
     header {
       position: fixed;
@@ -68,7 +73,9 @@
     }
 
 
-    /* INTRO */
+    /* =====================
+       INTRO
+       ===================== */
 
     .intro {
       padding: 150px 32px 80px;
@@ -101,7 +108,9 @@
     }
 
 
-    /* DRAWINGS */
+    /* =====================
+       DRAWINGS
+       ===================== */
 
     .drawings {
       padding: 0 32px 140px;
@@ -165,7 +174,9 @@
     }
 
 
-    /* LIGHTBOX */
+    /* =====================
+       LIGHTBOX
+       ===================== */
 
     .lightbox {
       display: none;
@@ -238,7 +249,9 @@
     }
 
 
-    /* CONTACT */
+    /* =====================
+       CONTACT
+       ===================== */
 
     .contact {
       padding: 100px 32px 120px;
@@ -264,7 +277,9 @@
     }
 
 
-    /* FOOTER */
+    /* =====================
+       FOOTER
+       ===================== */
 
     footer {
       padding: 24px 32px;
@@ -277,7 +292,9 @@
     }
 
 
-    /* MOBILE */
+    /* =====================
+       MOBILE
+       ===================== */
 
     @media (max-width: 800px) {
 
@@ -348,13 +365,16 @@
     }
 
   </style>
+
 </head>
 
 
 <body>
 
 
-  <!-- HEADER -->
+  <!-- =====================
+       HEADER
+       ===================== -->
 
   <header>
 
@@ -364,17 +384,29 @@
 
     <nav>
 
-      <a href="index.html">WORKS</a>
+      <a href="index.html">
+        WORKS
+      </a>
 
-      <a href="exhibitions.html">EXHIBITIONS</a>
+      <a href="exhibitions.html">
+        EXHIBITIONS
+      </a>
 
-      <a href="performance.html">PERFORMANCE</a>
+      <a href="performance.html">
+        PERFORMANCE
+      </a>
 
-      <a href="drawings.html">圖畫</a>
+      <a href="drawings.html">
+        圖畫
+      </a>
 
-      <a href="about.html">ABOUT</a>
+      <a href="about.html">
+        ABOUT
+      </a>
 
-      <a href="cv.html">CV</a>
+      <a href="cv.html">
+        CV
+      </a>
 
     </nav>
 
@@ -382,7 +414,9 @@
 
 
 
-  <!-- INTRO -->
+  <!-- =====================
+       INTRO
+       ===================== -->
 
   <section class="intro">
 
@@ -390,7 +424,9 @@
 
     <div class="intro-text">
 
-      <p><strong>I draw on paper.</strong></p>
+      <p>
+        <strong>I draw on paper.</strong>
+      </p>
 
       <p class="sub">
         Drawings, paintings, and things in between.
@@ -402,41 +438,242 @@
 
 
 
-  <!-- DRAWINGS -->
+  <!-- =====================
+       DRAWINGS
+       ===================== -->
 
   <section class="drawings">
 
     <div class="drawing-grid">
 
 
-    
+      <!-- =================================
+           DRAWING 01
+           ================================= -->
 
-      
-<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-솔드 구분법
+      <div
+        class="drawing-card"
+        onclick="openLightbox(
+          'images/drawings/도화.png',
+          'Untitled',
+          'Ink on paper · 2026',
+          'available'
+        )"
+      >
 
-솔드:
-<div class="status sold">
-  Sold
-</div>
+        <div class="image-wrap">
 
-판매:
-<div class="status">
-  <a
-    class="inquire"
-    href="mailto:moonjiyoung218@gmail.com?subject=Artwork%20Inquiry%20%E2%80%94%20Untitled"
-    onclick="event.stopPropagation();"
-  >
-    Available · Inquire →
-  </a>
-</div>
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+          <img
+            src="images/drawings/도화.png"
+            alt="Drawing 01"
+          >
 
-        
+        </div>
+
+        <div class="drawing-info">
+
+          <div class="title">
+            Untitled
+          </div>
+
+          <div class="details">
+            Ink on paper · 2026
+          </div>
+
+          <div class="status">
+
+            <a
+              class="inquire"
+              href="mailto:moonjiyoung218@gmail.com?subject=Artwork%20Inquiry%20%E2%80%94%20Untitled"
+              onclick="event.stopPropagation();"
+            >
+              Available · Inquire →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
 
 
 
-  <!-- LIGHTBOX -->
+      <!-- =================================
+           DRAWING 02
+           ================================= -->
+
+      <div
+        class="drawing-card"
+        onclick="openLightbox(
+          'images/drawings/도화-02.png',
+          'Untitled',
+          'Mixed media on paper · 2026',
+          'available'
+        )"
+      >
+
+        <div class="image-wrap">
+
+          <img
+            src="images/drawings/도화-02.png"
+            alt="Drawing 02"
+          >
+
+        </div>
+
+        <div class="drawing-info">
+
+          <div class="title">
+            Untitled
+          </div>
+
+          <div class="details">
+            Mixed media on paper · 2026
+          </div>
+
+          <div class="status">
+
+            <a
+              class="inquire"
+              href="mailto:moonjiyoung218@gmail.com?subject=Artwork%20Inquiry%20%E2%80%94%20Untitled"
+              onclick="event.stopPropagation();"
+            >
+              Available · Inquire →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================
+           DRAWING 03
+           ================================= -->
+
+      <div
+        class="drawing-card"
+        onclick="openLightbox(
+          'images/drawings/도화-03.png',
+          'Untitled',
+          'Drawing on paper · 2026',
+          'available'
+        )"
+      >
+
+        <div class="image-wrap">
+
+          <img
+            src="images/drawings/도화-03.png"
+            alt="Drawing 03"
+          >
+
+        </div>
+
+        <div class="drawing-info">
+
+          <div class="title">
+            Untitled
+          </div>
+
+          <div class="details">
+            Drawing on paper · 2026
+          </div>
+
+          <div class="status">
+
+            <a
+              class="inquire"
+              href="mailto:moonjiyoung218@gmail.com?subject=Artwork%20Inquiry%20%E2%80%94%20Untitled"
+              onclick="event.stopPropagation();"
+            >
+              Available · Inquire →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================
+           DRAWING 04
+           ================================= -->
+
+      <div
+        class="drawing-card"
+        onclick="openLightbox(
+          'images/drawings/도화-04.png',
+          'Untitled',
+          'Drawing on paper · 2026',
+          'available'
+        )"
+      >
+
+        <div class="image-wrap">
+
+          <img
+            src="images/drawings/도화-04.png"
+            alt="Drawing 04"
+          >
+
+        </div>
+
+        <div class="drawing-info">
+
+          <div class="title">
+            Untitled
+          </div>
+
+          <div class="details">
+            Drawing on paper · 2026
+          </div>
+
+          <div class="status">
+
+            <a
+              class="inquire"
+              href="mailto:moonjiyoung218@gmail.com?subject=Artwork%20Inquiry%20%E2%80%94%20Untitled"
+              onclick="event.stopPropagation();"
+            >
+              Available · Inquire →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================
+           앞으로 그림을 추가할 때
+           =================================
+
+           예:
+
+           파일:
+           images/drawings/도화-05.png
+
+           아래 DRAWING 04 카드 전체를 복사해서
+           DRAWING 05로 하나 더 만들면 됨.
+
+           ================================= -->
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================
+       LIGHTBOX
+       ===================== -->
 
   <div
     class="lightbox"
@@ -488,23 +725,31 @@
 
 
 
-  <!-- CONTACT -->
+  <!-- =====================
+       CONTACT
+       ===================== -->
 
   <section class="contact">
 
-    <h2>CONTACT</h2>
+    <h2>
+      CONTACT
+    </h2>
 
     <p>
+
       <a href="mailto:moonjiyoung218@gmail.com">
         moonjiyoung218@gmail.com
       </a>
+
     </p>
 
   </section>
 
 
 
-  <!-- FOOTER -->
+  <!-- =====================
+       FOOTER
+       ===================== -->
 
   <footer>
 
@@ -514,7 +759,9 @@
 
 
 
-  <!-- JAVASCRIPT -->
+  <!-- =====================
+       JAVASCRIPT
+       ===================== -->
 
   <script>
 
@@ -594,4 +841,5 @@
 
 
 </body>
+
 </html>
