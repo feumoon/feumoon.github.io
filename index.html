@@ -725,6 +725,41 @@ footer {
 
 }
 
+   .image-lightbox-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 44px;
+    height: 44px;
+    
+    border: none;
+    background: transparent;
+    color: #111111;
+    
+    font-size: 28px;
+    font-weight: 300;
+    
+    cursor: pointer;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    z-index: 2100;
+}
+
+.image-lightbox-prev {
+    left: 25px;
+}
+
+.image-lightbox-next {
+    right: 25px;
+}
+
+.image-lightbox-arrow:hover {
+    opacity: 0.45;
+}
 
 @media (max-width: 800px) {
 
@@ -831,7 +866,7 @@ footer {
         onclick="openCastNote()"
         aria-label="Artist Note"
     >
-        NOTE ↗
+       i
     </button>
 
 </div>
@@ -1170,6 +1205,14 @@ footer {
         ×
     </div>
 
+    <button
+        class="image-lightbox-arrow image-lightbox-prev"
+        onclick="event.stopPropagation(); showPreviousImage()"
+        aria-label="Previous artwork"
+    >
+        ←
+    </button>
+
     <img
         id="lightboxImage"
         src=""
@@ -1177,8 +1220,17 @@ footer {
         onclick="event.stopPropagation()"
     >
 
-</div>
+    <button
+        class="image-lightbox-arrow image-lightbox-next"
+        onclick="event.stopPropagation(); showNextImage()"
+        aria-label="Next artwork"
+    >
+        →
+    </button>
 
+</div>
+   
+   
 
 <script>
 
@@ -1196,15 +1248,76 @@ function closeCastNote() {
 
 }
 
-   
+
+
+const castImages = [
+    {
+        src: "images/cast/cast-03.png",
+        alt: "CAST 01"
+    },
+    {
+        src: "images/cast/cast-02.png",
+        alt: "CAST 02"
+    },
+    {
+        src: "images/cast/cast-04.png",
+        alt: "CAST 03"
+    },
+    {
+        src: "images/cast/cast-01.png",
+        alt: "CAST 04"
+    }
+];
+
+let currentCastImage = 0;
+
+
 function openImageLightbox(imageSrc, imageAlt) {
 
-    document.getElementById("lightboxImage").src = imageSrc;
+    currentCastImage = castImages.findIndex(
+        image => image.src === imageSrc
+    );
 
-    document.getElementById("lightboxImage").alt = imageAlt;
+    if (currentCastImage === -1) {
+        currentCastImage = 0;
+    }
+
+    showCastImage();
 
     document.getElementById("imageLightbox").style.display = "flex";
+}
 
+
+function showCastImage() {
+
+    const image = castImages[currentCastImage];
+
+    document.getElementById("lightboxImage").src = image.src;
+    document.getElementById("lightboxImage").alt = image.alt;
+}
+
+
+function showPreviousImage() {
+
+    currentCastImage--;
+
+    if (currentCastImage < 0) {
+        currentCastImage = castImages.length - 1;
+    }
+
+    showCastImage();
+}
+
+
+function showNextImage() {
+
+    currentCastImage++;
+
+    if (currentCastImage >= castImages.length) {
+        currentCastImage = 0;
+    }
+
+    showCastImage();
 }
 
 
@@ -1214,6 +1327,10 @@ function closeImageLightbox() {
 
 }
 
+
+
+
+   
 </script>
 
 
