@@ -154,6 +154,7 @@ main {
 .work-series {
 
     margin-bottom: 180px;
+    grid-column: 1 / -1;
 
 }
 
@@ -193,9 +194,9 @@ main {
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
-    gap: 70px 28px;
+    gap: 40px 24px;
 
 }
 
@@ -502,6 +503,104 @@ footer {
 
 }
 
+/* =====================
+   CAST ARTIST NOTE
+===================== */
+
+.cast-note-overlay {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    background: rgba(255,255,255,0.96);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px;
+
+}
+
+
+.cast-note {
+
+    width: min(700px, 90vw);
+
+    max-height: 80vh;
+
+    overflow-y: auto;
+
+}
+
+
+.cast-note-title {
+
+    font-size: 20px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.cast-note-text {
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: #444444;
+
+}
+
+
+.cast-note-close {
+
+    position: fixed;
+
+    top: 25px;
+
+    right: 35px;
+
+    font-size: 30px;
+
+    font-weight: 300;
+
+    cursor: pointer;
+
+    line-height: 1;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .cast-note-overlay {
+
+        padding: 30px;
+
+    }
+
+    .cast-note-text {
+
+        font-size: 13px;
+
+        line-height: 1.8;
+
+    }
+
+}
+
+   
+
+
+
+   
 </style>
 
 </head>
@@ -593,7 +692,7 @@ footer {
 
             <!-- CAST 01 -->
 
-            <a href="#" class="work">
+            <a href="javascript:void(0)" class="work" onclick="openCastNote()">
 
                 <div class="work-image">
 
@@ -622,7 +721,7 @@ footer {
 
             <!-- CAST 02 -->
 
-            <a href="#" class="work">
+           <a href="javascript:void(0)" class="work" onclick="openCastNote()">
 
                 <div class="work-image">
 
@@ -651,7 +750,7 @@ footer {
 
             <!-- CAST 03 -->
 
-            <a href="#" class="work">
+           <a href="javascript:void(0)" class="work" onclick="openCastNote()">
 
                 <div class="work-image">
 
@@ -680,7 +779,7 @@ footer {
 
             <!-- CAST 04 -->
 
-            <a href="#" class="work">
+            <a href="javascript:void(0)" class="work" onclick="openCastNote()">
 
                 <div class="work-image">
 
@@ -783,6 +882,133 @@ footer {
 </footer>
 
 
+<!-- =====================
+     CAST ARTIST NOTE
+===================== -->
+
+<div
+    id="castNote"
+    class="cast-note-overlay"
+    onclick="closeCastNote()"
+>
+
+    <div
+        class="cast-note"
+        onclick="event.stopPropagation()"
+    >
+
+        <div class="cast-note-close" onclick="closeCastNote()">
+            ×
+        </div>
+
+
+        <div class="cast-note-title">
+            CAST
+        </div>
+
+
+        <div class="cast-note-text">
+
+            <p>
+                <strong>CAST</strong> began from a moment when I was afraid to make a painting.
+            </p>
+
+            <p>
+                I looked at the blank paper and did not know where to begin.
+                I was afraid to make the first mark.
+            </p>
+
+            <p>
+                Then I thought of Simon Peter, who had spent the night casting his nets without catching anything.
+                When Jesus told him to go into the deep and let down his nets again,
+                Peter chose to trust His word and cast the net once more.
+            </p>
+
+            <p>
+                I wanted to do the same.
+            </p>
+
+            <p>
+                I threw ink onto the paper.
+            </p>
+
+            <p>
+                For me, casting is an act of courage —
+                the courage to cast hope once again into the deepest parts of life,
+                and the courage to take one more step toward the world despite fear.
+            </p>
+
+            <p>
+                But the work does not end with the act of casting.
+            </p>
+
+            <p>
+                Once the ink is released, it begins to move on its own.
+                It flows, spreads, gathers, and leaves traces beyond my complete control.
+                I look at what has emerged and respond to it —
+                sometimes following its movement, sometimes interrupting it,
+                and sometimes adding another layer.
+            </p>
+
+            <p>
+                The work becomes a relationship between the artist and the flowing material —
+                between what is chosen and what is allowed to happen.
+            </p>
+
+            <p>
+                My hand does not simply control the image.
+                It listens to what the material has already made
+                and decides where to intervene.
+            </p>
+
+            <p>
+                Each layer accumulates upon the previous one,
+                becoming a trace of time.
+            </p>
+
+            <p>
+                <strong>The layers become like a life.</strong>
+            </p>
+
+            <p>
+                We make a choice, leave a trace, and live through the time that follows.
+                Then another moment arrives, and another trace is added.
+                What we become is formed through these accumulated moments.
+            </p>
+
+            <p>
+                <strong>CAST</strong> is therefore both an act of beginning again
+                and a record of time —
+                of courage, hope, and the layers of a life that continue to accumulate.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function openCastNote() {
+
+    document.getElementById("castNote").style.display = "flex";
+
+}
+
+
+function closeCastNote() {
+
+    document.getElementById("castNote").style.display = "none";
+
+}
+
+</script>
+
+   
+
+   
 </body>
 
 </html>
