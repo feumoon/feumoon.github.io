@@ -189,14 +189,33 @@ main {
 
 }
 
+.series-grid .work-image {
 
-.series-grid {
+    width: 100%;
 
-    display: grid;
+    aspect-ratio: 4 / 5;
 
-    grid-template-columns: repeat(4, 1fr);
+    background: #ffffff;
 
-    gap: 40px 24px;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+.series-grid .work-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
 
 }
 
@@ -771,18 +790,15 @@ footer {
 
         <div class="series-header">
 
-          <div
-    class="series-title"
-    onclick="openCastNote()"
->
-    CAST
-</div>
-
-           
+            <div
+                class="series-title"
+                onclick="openCastNote()"
+            >
+                CAST
+            </div>
 
             <div class="series-note">
-                A series of works exploring courage, chance,
-                material movement, and the traces that accumulate over time.
+                A series of works exploring courage, chance, material movement, and the traces that accumulate over time.
             </div>
 
         </div>
@@ -793,19 +809,17 @@ footer {
 
             <!-- CAST 01 -->
 
-         
+            <div class="work">
 
-                <div class="work-image">
+                <div
+                    class="work-image"
+                    onclick="openImageLightbox('images/cast/cast-03.png', 'CAST 01')"
+                >
 
-
-<img
-    src="images/cast/cast-03.png"
-    alt="CAST 01"
-    onclick="openImageLightbox('images/cast/cast-03.png', 'CAST 01')"
->
-
-
-                   
+                    <img
+                        src="images/cast/cast-03.png"
+                        alt="CAST 01"
+                    >
 
                 </div>
 
@@ -821,20 +835,22 @@ footer {
 
                 </div>
 
-            </a>
+            </div>
 
 
             <!-- CAST 02 -->
 
-          
+            <div class="work">
 
-                <div class="work-image">
+                <div
+                    class="work-image"
+                    onclick="openImageLightbox('images/cast/cast-02.png', 'CAST 02')"
+                >
 
-               <img
-    src="images/cast/cast-03.png"
-    alt="CAST 01"
-    onclick="openImageLightbox('images/cast/cast-02.png', 'CAST 02')"
->
+                    <img
+                        src="images/cast/cast-02.png"
+                        alt="CAST 02"
+                    >
 
                 </div>
 
@@ -850,20 +866,22 @@ footer {
 
                 </div>
 
-            </a>
+            </div>
 
 
             <!-- CAST 03 -->
 
-         
+            <div class="work">
 
-                <div class="work-image">
+                <div
+                    class="work-image"
+                    onclick="openImageLightbox('images/cast/cast-04.png', 'CAST 03')"
+                >
 
-                 <img
-    src="images/cast/cast-03.png"
-    alt="CAST 01"
-    onclick="openImageLightbox('images/cast/cast-04.png', 'CAST 03')"
->
+                    <img
+                        src="images/cast/cast-04.png"
+                        alt="CAST 03"
+                    >
 
                 </div>
 
@@ -879,20 +897,22 @@ footer {
 
                 </div>
 
-            </a>
+            </div>
 
 
             <!-- CAST 04 -->
 
-         
+            <div class="work">
 
-                <div class="work-image">
+                <div
+                    class="work-image"
+                    onclick="openImageLightbox('images/cast/cast-01.png', 'CAST 04')"
+                >
 
-             <img
-    src="images/cast/cast-03.png"
-    alt="CAST 01"
-    onclick="openImageLightbox('images/cast/cast-01.png', 'CAST 04')"
->
+                    <img
+                        src="images/cast/cast-01.png"
+                        alt="CAST 04"
+                    >
 
                 </div>
 
@@ -908,7 +928,7 @@ footer {
 
                 </div>
 
-            </a>
+            </div>
 
 
         </div>
@@ -916,11 +936,6 @@ footer {
     </div>
 
 </div>
-
-
-
-
-
        
     </section>
 
