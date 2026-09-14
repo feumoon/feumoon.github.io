@@ -174,7 +174,22 @@ main {
 
     margin-bottom: 20px;
 
+    display: inline-block;
+
+    cursor: pointer;
+
+    border-bottom: 1px solid #111111;
+
+    padding-bottom: 4px;
+
 }
+
+.series-title:hover {
+
+    opacity: 0.45;
+
+}
+   
 
 
 .series-note {
@@ -1153,6 +1168,21 @@ footer {
 
 <script>
 
+   
+function openCastNote() {
+
+    document.getElementById("castNote").style.display = "flex";
+
+}
+
+
+function closeCastNote() {
+
+    document.getElementById("castNote").style.display = "none";
+
+}
+
+   
 function openImageLightbox(imageSrc, imageAlt) {
 
     document.getElementById("lightboxImage").src = imageSrc;
