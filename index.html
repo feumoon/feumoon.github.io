@@ -167,29 +167,60 @@ main {
 
 
 .series-title {
-
     font-size: 20px;
-
     font-weight: 400;
-
     margin-bottom: 20px;
+}
 
-    display: inline-block;
+   
+   .series-header-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.note-button {
+
+    width: 20px;
+    height: 20px;
+
+    padding: 0;
+
+    border: 1px solid #111111;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #111111;
+
+    font-size: 11px;
+
+    font-family: Arial, Helvetica, sans-serif;
 
     cursor: pointer;
 
-    border-bottom: 1px solid #111111;
+    display: flex;
 
-    padding-bottom: 4px;
+    align-items: center;
 
-}
-
-.series-title:hover {
-
-    opacity: 0.45;
+    justify-content: center;
 
 }
-   
+
+
+.note-button:hover {
+
+    background: #111111;
+
+    color: #ffffff;
+
+}
 
 
 .series-note {
@@ -238,35 +269,6 @@ main {
 
     width: 100%;
 
-    height: 100%;
-
-    object-fit: contain;
-
-    display: block;
-
-}
-
-
-
-   
-.series-grid .work-image {
-
-    width: 100%;
-    aspect-ratio: 4 / 5;
-
-    background: #ffffff;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-}
-
-.series-grid .work-image img {
-
-    width: 100%;
     height: 100%;
 
     object-fit: contain;
@@ -817,12 +819,24 @@ footer {
 
         <div class="series-header">
 
-            <div
-                class="series-title"
-                onclick="openCastNote()"
-            >
-                CAST
-            </div>
+
+<div class="series-header-title">
+
+    <div class="series-title">
+        CAST
+    </div>
+
+    <button
+        class="note-button"
+        onclick="openCastNote()"
+        aria-label="Artist Note"
+    >
+        NOTE ↗
+    </button>
+
+</div>
+
+           
 
             <div class="series-note">
                 A series of works exploring courage, chance, material movement, and the traces that accumulate over time.
@@ -1001,7 +1015,7 @@ footer {
 
 
         <a
-            href="mailto:YOUR-EMAIL@example.com"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=moonjiyoung218@gmail.com"
             class="contact-link">
 
             Contact
