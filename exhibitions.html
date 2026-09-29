@@ -177,6 +177,41 @@
       margin-bottom: 80px;
     }
 
+/* =====================
+   EXHIBITION MAIN LAYOUT
+===================== */
+
+.exhibition-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.exhibition-image {
+    width: 100%;
+}
+
+.exhibition-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.exhibition-text {
+    max-width: 620px;
+}
+
+.exhibition-text .description {
+    margin-top: 0;
+}
+
+.exhibition-text .press {
+    margin-top: 70px;
+}
+
+    
+    
     .overview-main {
 
       overflow: hidden;
@@ -467,35 +502,39 @@
 
     @media (max-width: 800px) {
 
-      header {
 
+      .exhibition-main {
+    grid-template-columns: 1fr;
+    gap: 60px;
+}
+
+.exhibition-text {
+    max-width: none;
+}
+
+      
+      header {
         padding: 18px 20px;
       }
 
       nav {
-
         gap: 12px;
-
         font-size: 10px;
       }
 
       .page-intro {
-
         padding: 120px 20px 60px;
       }
 
       .page-intro h1 {
-
         font-size: 32px;
       }
 
       .exhibition {
-
         padding: 0 20px 100px;
       }
 
       .exhibition-header {
-
         grid-template-columns: 1fr;
 
         gap: 30px;
@@ -626,177 +665,229 @@
     </div>
 
 
+  <section class="exhibition">
 
-    <!-- OVERVIEW -->
 
-    <div class="overview">
+    <!-- INFORMATION -->
 
-      <div class="section-label">
-        EXHIBITION VIEW
+    <div class="exhibition-header">
+
+      <div>
+
+        <div class="year">
+          2024
+        </div>
+
+        <h2 class="exhibition-title">
+          MoonLight in the Beginning
+        </h2>
+
+        <div class="exhibition-korean">
+          첫날, 밤의 윤슬
+        </div>
+
+        <div class="exhibition-type">
+          Solo Exhibition
+        </div>
+
       </div>
 
 
-      <!-- MAIN OVERVIEW -->
+      <div class="exhibition-meta">
 
-      <div
-        class="overview-main"
-        onclick="openLightbox(
-          'images/exhibitions/first-night-shimmer/01_overview.avif'
-        )"
-      >
-
-        <img
-          src="images/exhibitions/first-night-shimmer/01_overview.avif"
-          alt="MoonLight in the Beginning — Exhibition view"
-        >
-
-      </div>
-
-    </div>
-
-
-
-    <!-- DESCRIPTION -->
-
-    <div class="description">
-
-      <h2>
-        ABOUT THE EXHIBITION
-      </h2>
-
-
-      <!-- SHORT VERSION -->
-
-      <p>
-
-        <em>MoonLight in the Beginning</em> began with a
-        rusted screw found in the yard of the artist's parents'
-        factory. From this small trace of industrial life,
-        the exhibition reflects on the relationship between
-        individuals and the structures of contemporary society.
-
-      </p>
-
-
-      <!-- READ MORE BUTTON -->
-
-      <div
-        class="read-more"
-        onclick="toggleText()"
-        id="readMoreButton"
-      >
-        READ MORE +
-      </div>
-
-
-      <!-- LONG VERSION -->
-
-      <div
-        class="long-text"
-        id="longText"
-      >
-
-        <p>
-
-          The artist's work began with a single screw found
-          in her parents' factory. A rusted screw, thrown away
-          in the yard, reminded her of herself. This small,
-          discarded object became a starting point for
-          reflecting on her own life and the lives of people
-          living in contemporary society.
-
-        </p>
-
-
-        <p>
-
-          After graduating, the artist temporarily put aside
-          her desire to live as an artist and experienced
-          society through working life. There, she encountered
-          a gap between the individual and the structures of
-          the city.
-
-        </p>
-
-
-        <p>
-
-          The exhibition brings together the industrial
-          landscape of the city with the natural image of
-          shimmering light on the sea. The reflection of
-          <em>Yoonseul</em> fills the exhibition space and
-          enters the screens, allowing the colors of nature
-          to seep into the urban environment.
-
-        </p>
-
-
-        <p>
-
-          In the work, <em>Yoonseul</em> speaks of our
-          beginning — a pure and beautiful world. Against
-          this image, the exhibition asks what kind of lives
-          we are living within the world we have built.
-
-        </p>
-
-
-        <p>
-
-          The numerous screens and human eyes represent an
-          increasingly verticalized industrial and competitive
-          society. The eyes seem to watch one another,
-          creating a feeling of surveillance and tension.
-          Through their movement, the inorganic monitors
-          begin to resemble living organisms.
-
-        </p>
-
-
-        <p>
-
-          The work reflects on society and the individual,
-          the individual and the community, and the possibility
-          of a more humane world.
-
-        </p>
-
-
-        <p>
-
-          <em>Yoonseul</em> is a Korean word meaning the
-          shimmering ripples of sunlight or moonlight reflected
-          on water.
-
-        </p>
+        Gallery Nava<br>
+        Gwangmyeong, South Korea<br>
+        17 Aug – 13 Oct 2024
 
       </div>
 
     </div>
 
 
+    <!-- 여기부터 새 코드 -->
 
-    <!-- PRESS -->
+    <!-- =====================
+         EXHIBITION MAIN
+    ===================== -->
 
-    <div class="press">
-
-      <h2>
-        PRESS
-      </h2>
+    <div class="exhibition-main">
 
 
-      <div class="press-item">
+        <!-- LEFT : EXHIBITION IMAGE -->
 
-        <a href="https://biz.chosun.com/culture/culture_general/2024/09/03/O4OVPAGQPBD2VLJ5APXIAN2YTA/?outputType=amp&utm_source=chatgpt.com" target="_blank">
-          Moon Jiyoung, First Solo Exhibition
-          'MoonLight in the Beginning'
-        </a>
+        <div class="exhibition-image">
 
-        <span class="press-publication">
-          ChosunBiz
-        </span>
+            <img
+                src="images/exhibitions/first-night-shimmer/01_overview.avif"
+                alt="MoonLight in the Beginning — Exhibition view"
+            >
 
-      </div>
+        </div>
+
+
+        <!-- RIGHT : TEXT -->
+
+        <div class="exhibition-text">
+
+
+            <!-- ABOUT THE EXHIBITION -->
+
+            <div class="description">
+
+                <h2>
+                    ABOUT THE EXHIBITION
+                </h2>
+
+                <p>
+                    <em>MoonLight in the Beginning</em> began with a
+                    rusted screw found in the yard of the artist's parents'
+                    factory. From this small trace of industrial life,
+                    the exhibition reflects on the relationship between
+                    individuals and the structures of contemporary society.
+                </p>
+
+
+                <div
+                    class="read-more"
+                    onclick="toggleText()"
+                    id="readMoreButton"
+                >
+                    READ MORE +
+                </div>
+
+
+                <div
+                    class="long-text"
+                    id="longText"
+                >
+
+                    <p>
+                        The artist's work began with a single screw found
+                        in her parents' factory. A rusted screw, thrown away
+                        in the yard, reminded her of herself. This small,
+                        discarded object became a starting point for
+                        reflecting on her own life and the lives of people
+                        living in contemporary society.
+                    </p>
+
+                    <p>
+                        After graduating, the artist temporarily put aside
+                        her desire to live as an artist and experienced
+                        society through working life. There, she encountered
+                        a gap between the individual and the structures of
+                        the city.
+                    </p>
+
+                    <p>
+                        The exhibition brings together the industrial
+                        landscape of the city with the natural image of
+                        shimmering light on the sea. The reflection of
+                        <em>Yoonseul</em> fills the exhibition space and
+                        enters the screens, allowing the colors of nature
+                        to seep into the urban environment.
+                    </p>
+
+                    <p>
+                        In the work, <em>Yoonseul</em> speaks of our
+                        beginning — a pure and beautiful world. Against
+                        this image, the exhibition asks what kind of lives
+                        we are living within the world we have built.
+                    </p>
+
+                    <p>
+                        The numerous screens and human eyes represent an
+                        increasingly verticalized industrial and competitive
+                        society. The eyes seem to watch one another,
+                        creating a feeling of surveillance and tension.
+                        Through their movement, the inorganic monitors
+                        begin to resemble living organisms.
+                    </p>
+
+                    <p>
+                        The work reflects on society and the individual,
+                        the individual and the community, and the possibility
+                        of a more humane world.
+                    </p>
+
+                    <p>
+                        <em>Yoonseul</em> is a Korean word meaning the
+                        shimmering ripples of sunlight or moonlight reflected
+                        on water.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRESS -->
+
+            <div class="press">
+
+                <h2>
+                    PRESS
+                </h2>
+
+                <div class="press-item">
+
+                    <a
+                        href="https://biz.chosun.com/culture/culture_general/2024/09/03/O4OVPAGQPBD2VLJ5APXIAN2YTA/?outputType=amp"
+                        target="_blank"
+                    >
+                        Moon Jiyoung, First Solo Exhibition
+                        'MoonLight in the Beginning'
+                    </a>
+
+                    <span class="press-publication">
+                        ChosunBiz
+                    </span>
+
+                </div>
+
+
+                <div class="press-item">
+
+                    <a
+                        href="https://www.daljin.com/?WS=21&BC=gdv&GNO=D097551&sfl=&stx=&date=20249&tab=genre&area=&cate=A&genre=I&kind=&PHPSESSID=de025aefca016d147c41c212d011186b"
+                        target="_blank"
+                    >
+                        Moon Jiyoung Solo Exhibition:
+                        MoonLight in the Beginning
+                    </a>
+
+                    <span class="press-publication">
+                        Seoul Art Guide
+                    </span>
+
+                </div>
+
+
+                <div class="press-item">
+
+                    <a
+                        href="https://www.arthub.co.kr/sub01/board03_view.htm?No=52124"
+                        target="_blank"
+                    >
+                        MoonLight in the Beginning
+                    </a>
+
+                    <span class="press-publication">
+                        ArtHub
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 새 코드 끝 -->
+
+
+  </section>
+
 
 
       <div class="press-item">
