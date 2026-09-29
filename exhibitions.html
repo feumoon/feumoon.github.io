@@ -201,6 +201,52 @@
     height: auto;
 }
 
+    .exhibition-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.exhibition-slider img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.exhibition-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 12px;
+    font-size: 10px;
+    color: #777;
+    letter-spacing: 0.08em;
+}
+
+.exhibition-controls button {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: #777;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.exhibition-controls button:hover {
+    opacity: 0.45;
+}
+
+.exhibition-meta {
+    margin-top: 14px;
+    font-size: 10px;
+    line-height: 1.7;
+    color: #999;
+    letter-spacing: 0.02em;
+}
+
 .exhibition-text {
     max-width: 620px;
 }
@@ -446,61 +492,7 @@
     }
 
 
-    /* LIGHTBOX */
-
-    .lightbox {
-
-      display: none;
-
-      position: fixed;
-
-      inset: 0;
-
-      z-index: 2000;
-
-      background: rgba(255,255,255,0.97);
-
-      justify-content: center;
-
-      align-items: center;
-
-      padding: 50px;
-    }
-
-    .lightbox.active {
-
-      display: flex;
-    }
-
-    .lightbox img {
-
-      max-width: 92vw;
-
-      max-height: 88vh;
-
-      width: auto;
-
-      height: auto;
-
-      object-fit: contain;
-    }
-
-    .close {
-
-      position: fixed;
-
-      top: 22px;
-
-      right: 32px;
-
-      font-size: 28px;
-
-      font-weight: 300;
-
-      cursor: pointer;
-    }
-
-
+ 
     /* FOOTER */
 
     footer {
@@ -685,23 +677,50 @@
 
     <!-- LEFT -->
 
-    <div class="exhibition-image">
+  <div class="exhibition-image">
+
+    <div class="exhibition-slider">
 
         <img
-            src="images/exhibitions/first-night-shimmer/01_overview.avif"
+            id="exhibitionSlide"
+            src=""
             alt="MoonLight in the Beginning — Exhibition view"
         >
 
-        <div class="exhibition-meta">
+    </div>
 
-            Gallery Nava<br>
-            Gwangmyeong, South Korea<br>
-            17 Aug – 13 Oct 2024
+    <div class="exhibition-controls">
 
-        </div>
+        <button
+            type="button"
+            onclick="previousExhibitionImage()"
+            aria-label="Previous image"
+        >
+            ←
+        </button>
+
+        <span id="exhibitionCounter">01 / 01</span>
+
+        <button
+            type="button"
+            onclick="nextExhibitionImage()"
+            aria-label="Next image"
+        >
+            →
+        </button>
 
     </div>
 
+    <div class="exhibition-meta">
+        Gallery Nava<br>
+        Gwangmyeong, South Korea<br>
+        17 Aug – 13 Oct 2024
+    </div>
+
+</div>
+
+
+   
 
     <!-- RIGHT -->
 
@@ -933,6 +952,64 @@
     }
 
 
+/* =====================
+   EXHIBITION SLIDER
+===================== */
+
+const exhibitionImages = [
+    "images/exhibitions/first-night-shimmer/01_overview.avif",
+
+    // 사진을 추가하면 이 아래에 한 줄씩 추가
+    // "images/exhibitions/first-night-shimmer/02.avif",
+    // "images/exhibitions/first-night-shimmer/03.avif",
+    // "images/exhibitions/first-night-shimmer/04.avif",
+];
+
+let currentExhibitionImage = 0;
+
+function updateExhibitionSlider() {
+
+    const image = document.getElementById("exhibitionSlide");
+    const counter = document.getElementById("exhibitionCounter");
+
+    image.src = exhibitionImages[currentExhibitionImage];
+
+    const current =
+        String(currentExhibitionImage + 1).padStart(2, "0");
+
+    const total =
+        String(exhibitionImages.length).padStart(2, "0");
+
+    counter.textContent = `${current} / ${total}`;
+}
+
+
+function nextExhibitionImage() {
+
+    currentExhibitionImage =
+        (currentExhibitionImage + 1) %
+        exhibitionImages.length;
+
+    updateExhibitionSlider();
+}
+
+
+function previousExhibitionImage() {
+
+    currentExhibitionImage =
+        (currentExhibitionImage - 1 +
+        exhibitionImages.length) %
+        exhibitionImages.length;
+
+    updateExhibitionSlider();
+}
+
+
+updateExhibitionSlider();
+    
+
+
+    
     function toggleText() {
 
       const text =
