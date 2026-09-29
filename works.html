@@ -1,1 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Works — Fe:u Moon</title>
+
+<style>
+
+/* =====================
+   BASIC
+===================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #ffffff;
+    color: #111111;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =====================
+   HEADER
+===================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 25px 3.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: #111111;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+}
+
+nav a:hover {
+    opacity: 0.4;
+}
+
+
+/* =====================
+   MAIN
+===================== */
+
+main {
+    padding: 110px 3.5% 0;
+}
+
+
+/* =====================
+   WORKS
+===================== */
+
+#works {
+    padding: 60px 0 180px;
+}
+
+.section-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 70px;
+}
+
+
+/* =====================
+   WORK SERIES
+===================== */
+
+.work-series {
+    margin-bottom: 180px;
+}
+
+.series-header {
+    margin-bottom: 55px;
+}
+
+.series-header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.series-title {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.note-button {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: 1px solid #111111;
+    border-radius: 50%;
+    background: transparent;
+    color: #111111;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.note-button:hover {
+    background: #111111;
+    color: #ffffff;
+}
+
+.series-note {
+    max-width: 650px;
+    margin-top: 18px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #555555;
+}
+
+
+/* =====================
+   FEATURE WORK
+===================== */
+
+.work-feature {
+    width: 50%;
+}
+
+.work-feature .work-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.work-feature .work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.work-feature .work-image:hover {
+    opacity: 0.82;
+}
+
+.work-info {
+    padding-top: 14px;
+}
+
+.work-title {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.work-meta {
+    font-size: 10px;
+    color: #777777;
+    line-height: 1.5;
+}
+
+
+/* =====================
+   CONTACT
+===================== */
+
+#contact {
+    padding: 180px 0 220px;
+    border-top: 1px solid #dddddd;
+}
+
+.contact-title {
+    font-size: clamp(45px, 7vw, 100px);
+    line-height: 1.05;
+    letter-spacing: -4px;
+    margin-bottom: 60px;
+}
+
+.contact-info {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555555;
+}
+
+.contact-link {
+    display: inline-block;
+    margin-top: 35px;
+    color: #111111;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #111111;
+}
+
+
+/* =====================
+   FOOTER
+===================== */
+
+footer {
+    border-top: 1px solid #dddddd;
+    padding: 30px 0 45px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #777777;
+}
+
+
+/* =====================
+   CAST ARTIST NOTE
+===================== */
+
+.cast-note-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.96);
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.cast-note {
+    width: min(700px, 90vw);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.cast-note-title {
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+.cast-note-text {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #444444;
+}
+
+.cast-note-close {
+    position: fixed;
+    top: 25px;
+    right: 35px;
+    font-size: 30px;
+    font-weight: 300;
+    cursor: pointer;
+    line-height: 1;
+}
+
+
+/* =====================
+   IMAGE LIGHTBOX
+===================== */
+
+.image-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(255,255,255,0.96);
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.image-lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.image-lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    color: #111111;
+}
+
+.image-lightbox-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: transparent;
+    color: #111111;
+    font-size: 28px;
+    font-weight: 300;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2100;
+}
+
+.image-lightbox-prev {
+    left: 25px;
+}
+
+.image-lightbox-next {
+    right: 25px;
+}
+
+.image-lightbox-arrow:hover {
+    opacity: 0.45;
+}
+
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 20px 5%;
+    }
+
+    nav {
+        gap: 12px;
+        overflow-x: auto;
+    }
+
+    nav a {
+        font-size: 8px;
+    }
+
+    main {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .work-feature {
+        width: 100%;
+    }
+
+    .contact-title {
+        letter-spacing: -2px;
+    }
+
+    .image-lightbox {
+        padding: 20px;
+    }
+
+    .image-lightbox img {
+        max-width: 94vw;
+        max-height: 85vh;
+    }
+
+    .image-lightbox-arrow {
+        font-size: 24px;
+    }
+
+}
+
+
+/* =====================
+   SMALL MOBILE
+===================== */
+
+@media (max-width: 500px) {
+
+    .logo {
+        font-size: 17px;
+    }
+
+    nav {
+        gap: 9px;
+    }
+
+    nav a {
+        font-size: 7px;
+    }
+
+    .series-title {
+        font-size: 18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================
+     HEADER
+===================== -->
+
+<header>
+
+    <div class="logo">
+        Fe:u Moon
+    </div>
+
+    <nav>
+
+        <a href="works.html">
+            WORKS
+        </a>
+
+        <a href="exhibitions.html">
+            EXHIBITIONS
+        </a>
+
+        <a href="performance.html">
+            PERFORMANCE
+        </a>
+
+        <a href="drawings.html">
+            圖畫
+        </a>
+
+        <a href="about.html">
+            ABOUT
+        </a>
+
+        <a href="cv.html">
+            CV
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =====================
+     MAIN
+===================== -->
+
+<main>
+
+
+<section id="works">
+
+    <div class="section-title">
+        WORKS
+    </div>
+
+
+    <!-- =====================
+         CAST
+    ===================== -->
+
+    <div class="work-series">
+
+        <div class="series-header">
+
+            <div class="series-header-title">
+
+                <div class="series-title">
+                    CAST
+                </div>
+
+                <button
+                    class="note-button"
+                    onclick="openCastNote()"
+                    aria-label="Artist Note"
+                >
+                    i
+                </button>
+
+            </div>
+
+
+            <div class="series-note">
+                A series of works exploring courage, chance,
+                material movement, and the traces that accumulate over time.
+            </div>
+
+        </div>
+
+
+        <!-- REPRESENTATIVE IMAGE -->
+
+        <div class="work-feature">
+
+            <div
+                class="work-image"
+                onclick="openImageLightbox(
+                    'images/cast/cast-03.png',
+                    'CAST 01'
+                )"
+            >
+
+                <img
+                    src="images/cast/cast-03.png"
+                    alt="CAST 01"
+                >
+
+            </div>
+
+
+            <div class="work-info">
+
+                <div class="work-title">
+                    CAST
+                </div>
+
+                <div class="work-meta">
+                    Ink and mixed media<br>
+                    60 × 73 cm
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================
+     CONTACT
+===================== -->
+
+<section id="contact">
+
+    <div class="section-title">
+        CONTACT
+    </div>
+
+
+    <div class="contact-title">
+
+        Exhibitions,<br>
+        collaborations<br>
+        & artwork inquiries
+
+    </div>
+
+
+    <div class="contact-info">
+
+        For exhibitions, collaborations,
+        commissions and artwork inquiries.
+
+    </div>
+
+
+    <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=moonjiyoung218@gmail.com"
+        class="contact-link"
+    >
+        Contact
+    </a>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================
+     FOOTER
+===================== -->
+
+<footer>
+
+    <div>
+        © 2026 Fe:u Moon. All rights reserved.
+    </div>
+
+    <div>
+        Fe:u Moon
+    </div>
+
+</footer>
+
+
+<!-- =====================
+     CAST ARTIST NOTE
+===================== -->
+
+<div
+    id="castNote"
+    class="cast-note-overlay"
+    onclick="closeCastNote()"
+>
+
+    <div
+        class="cast-note"
+        onclick="event.stopPropagation()"
+    >
+
+        <div
+            class="cast-note-close"
+            onclick="closeCastNote()"
+        >
+            ×
+        </div>
+
+
+        <div class="cast-note-title">
+            CAST
+        </div>
+
+
+        <div class="cast-note-text">
+
+            <p>
+                <strong>CAST</strong> began from a moment when I was afraid to make a painting.
+            </p>
+
+            <p>
+                I looked at the blank paper and did not know where to begin.
+                I was afraid to make the first mark.
+            </p>
+
+            <p>
+                Then I thought of Simon Peter, who had spent the night casting his nets without catching anything.
+                When Jesus told him to go into the deep and let down his nets again,
+                Peter chose to trust His word and cast the net once more.
+            </p>
+
+            <p>
+                I wanted to do the same.
+            </p>
+
+            <p>
+                I threw ink onto the paper.
+            </p>
+
+            <p>
+                For me, casting is an act of courage —
+                the courage to cast hope once again into the deepest parts of life,
+                and the courage to take one more step toward the world despite fear.
+            </p>
+
+            <p>
+                But the work does not end with the act of casting.
+            </p>
+
+            <p>
+                Once the ink is released, it begins to move on its own.
+                It flows, spreads, gathers, and leaves traces beyond my complete control.
+                I look at what has emerged and respond to it —
+                sometimes following its movement, sometimes interrupting it,
+                and sometimes adding another layer.
+            </p>
+
+            <p>
+                The work becomes a relationship between the artist and the flowing material —
+                between what is chosen and what is allowed to happen.
+            </p>
+
+            <p>
+                My hand does not simply control the image.
+                It listens to what the material has already made
+                and decides where to intervene.
+            </p>
+
+            <p>
+                Each layer accumulates upon the previous one,
+                becoming a trace of time.
+            </p>
+
+            <p>
+                <strong>The layers become like a life.</strong>
+            </p>
+
+            <p>
+                We make a choice, leave a trace, and live through the time that follows.
+                Then another moment arrives, and another trace is added.
+                What we become is formed through these accumulated moments.
+            </p>
+
+            <p>
+                <strong>CAST</strong> is therefore both an act of beginning again
+                and a record of time —
+                of courage, hope, and the layers of a life that continue to accumulate.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================
+     IMAGE LIGHTBOX
+===================== -->
+
+<div
+    id="imageLightbox"
+    class="image-lightbox"
+    onclick="closeImageLightbox()"
+>
+
+    <div
+        class="image-lightbox-close"
+        onclick="closeImageLightbox()"
+    >
+        ×
+    </div>
+
+
+    <button
+        class="image-lightbox-arrow image-lightbox-prev"
+        onclick="event.stopPropagation(); showPreviousImage()"
+        aria-label="Previous artwork"
+    >
+        ←
+    </button>
+
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt=""
+        onclick="event.stopPropagation()"
+    >
+
+
+    <button
+        class="image-lightbox-arrow image-lightbox-next"
+        onclick="event.stopPropagation(); showNextImage()"
+        aria-label="Next artwork"
+    >
+        →
+    </button>
+
+</div>
+
+
+<script>
+
+
+/* =====================
+   CAST NOTE
+===================== */
+
+function openCastNote() {
+
+    document.getElementById("castNote").style.display = "flex";
+
+}
+
+
+function closeCastNote() {
+
+    document.getElementById("castNote").style.display = "none";
+
+}
+
+
+/* =====================
+   CAST IMAGES
+===================== */
+
+const castImages = [
+
+    {
+        src: "images/cast/cast-03.png",
+        alt: "CAST 01"
+    },
+
+    {
+        src: "images/cast/cast-02.png",
+        alt: "CAST 02"
+    },
+
+    {
+        src: "images/cast/cast-04.png",
+        alt: "CAST 03"
+    },
+
+    {
+        src: "images/cast/cast-01.png",
+        alt: "CAST 04"
+    }
+
+];
+
+
+let currentCastImage = 0;
+
+
+/* =====================
+   OPEN LIGHTBOX
+===================== */
+
+function openImageLightbox(imageSrc, imageAlt) {
+
+    currentCastImage = castImages.findIndex(
+        image => image.src === imageSrc
+    );
+
+    if (currentCastImage === -1) {
+        currentCastImage = 0;
+    }
+
+    showCastImage();
+
+    document.getElementById("imageLightbox").style.display = "flex";
+
+}
+
+
+/* =====================
+   SHOW IMAGE
+===================== */
+
+function showCastImage() {
+
+    const image = castImages[currentCastImage];
+
+    document.getElementById("lightboxImage").src = image.src;
+
+    document.getElementById("lightboxImage").alt = image.alt;
+
+}
+
+
+/* =====================
+   PREVIOUS
+===================== */
+
+function showPreviousImage() {
+
+    currentCastImage--;
+
+    if (currentCastImage < 0) {
+        currentCastImage = castImages.length - 1;
+    }
+
+    showCastImage();
+
+}
+
+
+/* =====================
+   NEXT
+===================== */
+
+function showNextImage() {
+
+    currentCastImage++;
+
+    if (currentCastImage >= castImages.length) {
+        currentCastImage = 0;
+    }
+
+    showCastImage();
+
+}
+
+
+/* =====================
+   CLOSE LIGHTBOX
+===================== */
+
+function closeImageLightbox() {
+
+    document.getElementById("imageLightbox").style.display = "none";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
