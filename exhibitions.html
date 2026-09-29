@@ -881,31 +881,6 @@
 
 
 
-  <!-- LIGHTBOX -->
-
-  <div
-    class="lightbox"
-    id="lightbox"
-    onclick="closeLightbox()"
-  >
-
-    <div
-      class="close"
-      onclick="closeLightbox()"
-    >
-      ×
-    </div>
-
-
-    <img
-      id="lightbox-image"
-      src=""
-      alt="Exhibition image"
-    >
-
-  </div>
-
-
 
   <!-- FOOTER -->
 
@@ -917,39 +892,6 @@
 
 
 
-  <!-- JAVASCRIPT -->
-
-  <script>
-
-    function openLightbox(image) {
-
-      const lightbox =
-        document.getElementById("lightbox");
-
-      const imageElement =
-        document.getElementById("lightbox-image");
-
-
-      imageElement.src = image;
-
-      lightbox.classList.add("active");
-
-      document.body.style.overflow = "hidden";
-
-    }
-
-
-    function closeLightbox() {
-
-      const lightbox =
-        document.getElementById("lightbox");
-
-
-      lightbox.classList.remove("active");
-
-      document.body.style.overflow = "";
-
-    }
 
 
 /* ========================================================================================================================
@@ -1037,18 +979,6 @@ updateExhibitionSlider();
     }
 
 
-    document.addEventListener(
-      "keydown",
-      function(event) {
-
-        if (event.key === "Escape") {
-
-          closeLightbox();
-
-        }
-
-      }
-    );
 
   </script>
 
